@@ -14,56 +14,16 @@ class ProductController extends Controller
     {
            $products = Product::all();
     // $products = Product::paginate(5);
-
+// dd($products);
     return view('products.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    Public function show(Product $product)
     {
-        //
+
+
+      return view('products.show',compact('product'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $products)
-    {
-          $products=Product::all();
-    return view ('products.index',compact('products'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

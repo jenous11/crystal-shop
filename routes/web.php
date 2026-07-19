@@ -23,7 +23,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
 
     Route::resource('products', AdminController::class);
 });
-
-Route::resource('/products',ProductController::class);
 Route::view("/nav",'layouts.nav');
+Route::get('/products',[ProductController::class,'index'])->name('public.products.index');
+Route::get('/products/{product}',[ProductController::class,'show'])->name('public.products.show');
+// Route::resource('products',ProductController::class)->only(['index','show']);
 require __DIR__.'/auth.php';

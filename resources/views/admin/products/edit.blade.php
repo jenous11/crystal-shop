@@ -1,5 +1,5 @@
 <x-app-layout>
-
+{{-- foreah($products as $product) --}}
     <form action="/admin/products/{{ $product->id }}" method="POST" enctype="multipart/form-data " class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black" >
         @csrf
         @method('PUT')

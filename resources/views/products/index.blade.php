@@ -3,20 +3,15 @@
     <div class="  flex flex-wrap ml-[50px] gap-[20px]  ">
       @foreach ($products as $product)
       <div class="mt-3   w-[250px]    bg-amber-100  ml-[20px] group  ">
-                @if ($product->image)
-                    <a href="/products/{{$product->id}}/edit">
+                    <a href="{{route('public.products.show',$product->id)}}">
                        <img src="{{ asset('storage/' . $product->image) }}" alt="product image" class="opacity-90 group-hover:scale-105 ">
                       </a>
-                @endif
-                 <a href="/products/{{$product->id}}/show">  <p class="mt-4" > Name: {{ $product->name }}</p> </a>
-                  <a href="/products/{{$product->id}}/show"> <p class="   "> Description: {{ $product->description }}</p></a>
-                  <a href="/products/{{$product->id}}/show"> <p class="   "> Price:{{ $product->price }}</p></a>
+                {{-- @endif --}}
+                 <a href="{{route('products.show',$product->name)}}">  <p class="mt-4" > Name: {{ $product->name }}</p> </a>
+                  <a href="/products/show"> <p class="   "> Description: {{ $product->description }}</p></a>
+                  <a href="/products/show"> <p class="   "> Price:{{ $product->price }}</p></a>
 
-                <form action="/products/{{ $product->id }}" method="POST">
-                  @csrf
-                  @method('DELETE')
-                  <button class="border rounded opacity-90 group-hover:scale-110   ">delete</button>
-                </form>
+
               </div>
               @endforeach
               {{-- {{ $products->links() }} --}}
