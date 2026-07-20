@@ -5,9 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[ProductController::class,'index'])->name('public.products.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,4 +25,6 @@ Route::view("/nav",'layouts.nav');
 Route::get('/products',[ProductController::class,'index'])->name('public.products.index');
 Route::get('/products/{product}',[ProductController::class,'show'])->name('public.products.show');
 // Route::resource('products',ProductController::class)->only(['index','show']);
+
+Route::view('/test','layouts.footer');
 require __DIR__.'/auth.php';
