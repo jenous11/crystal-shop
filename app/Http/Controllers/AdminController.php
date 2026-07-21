@@ -11,17 +11,17 @@ class AdminController extends Controller
 {
   public function index()
   {
-    $products = Product::all();
+    $adminproducts = Product::all();
     // $products = Product::paginate(5);
 
-    return view('admin.products.index', compact('products'));
+    return view('admin.adminproducts.adminindex', compact('adminproducts'));
   }
 
   public function create()
   {
     $categories = Category::all();
 
-    return view('admin.products.create', compact('categories'));
+    return view('admin.adminproducts.create', compact('categories'));
   }
 
   public function store(Request $request)
@@ -53,21 +53,21 @@ class AdminController extends Controller
 
       }
       Product::create($data);
-    return redirect()->route('products.index');
+    return redirect()->route('adminproducts.index');
   }
 
-  public function show(Product $products){
-    $products=Product::all();
-    return view ('admin.products.index',compact('products'));
+  public function show(Product $adminproducts){
+    $admnproducts=Product::all();
+    return view ('admin.adminproducts.adminindex',compact('products'));
   }
 
- public function edit(Product $product)  // we do route model binding as we only need 1 product.
+ public function edit(Product $adminproduct)  // we do route model binding as we only need 1 product.
  {
   $categories = Category::all();
-    return view('admin.products.edit', compact('product','categories'));
+    return view('admin.adminproducts.edit', compact('adminproduct','categories'));
   }
 
-  public function update(Product $product,Request $request){
+  public function update(Product $adminproduct,Request $request){
 
   //validate upadated data
 
@@ -91,18 +91,18 @@ $data=[
 
   // validate image
     if($request->hasFile('image')){
-      $product['image']=$request->file('image')->store('images','public');
+      $adminproduct['image']=$request->file('image')->store('images','public');
       // dd($product);
 
       }
-      $product->update($data);
-    return redirect()->route('products.index');
+      $adminproduct->update($data);
+    return redirect()->route('adminproducts.adminindex');
 
   }
 
-  public function destroy(Product $product ){
+  public function destroy(Product $adminproduct ){
 
-    $product->delete();
-    return redirect()->route('products.index');
+    $adminproduct->delete();
+    return redirect()->route('adminproducts.adminindex');
   }
 }

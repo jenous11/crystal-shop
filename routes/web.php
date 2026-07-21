@@ -19,10 +19,12 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
 
-    Route::resource('products', AdminController::class);
+    Route::resource('adminproducts', AdminController::class);
 });
+
 Route::view("/nav",'layouts.nav');
-Route::get('/products',[ProductController::class,'index'])->name('public.products.index');
+Route::get('/products',[ProductController::class,'index'])->name('products.index');
+Route::get('products.show',[ProductController::class,'show'])->name('products.show');
 Route::get('/products/{product}',[ProductController::class,'show'])->name('public.products.show');
 // Route::resource('products',ProductController::class)->only(['index','show']);
 

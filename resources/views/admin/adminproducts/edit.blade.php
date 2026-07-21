@@ -1,12 +1,11 @@
 <x-app-layout>
-{{-- foreah($products as $product) --}}
-    <form action="/admin/products/{{ $product->id }}" method="POST" enctype="multipart/form-data " class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black" >
+    <form action="/admin/adminproducts/{{ $adminproduct->id }}" method="POST" enctype="multipart/form-data " class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black" >
         @csrf
         @method('PUT')
         {{-- name --}}
         <div class="mt-4">
             <label for="name">Name of the product</label>
-            <input type="text" name="name" class="text-black" value="{{ $product->name }}" >
+            <input type="text" name="name" class="text-black" value="{{ $adminproduct->name }}" >
             @error('name')
                 <p>{{ $message }}</p>
             @enderror
@@ -17,7 +16,7 @@
         <div>
             <label for="description">Description
                 <textarea name="description" id="description"
-                class="text-black"  >{{ $product->description }}
+                class="text-black"  >{{ $adminproduct->description }}
                 </textarea>
                 @error('description')
                <p>{{ $message }}</p>
@@ -28,7 +27,7 @@
         {{-- price --}}
         <div>
             <label for="price">Price</label>
-            <input type="text" name="price" class="text-black" value={{ $product->price }}>
+            <input type="text" name="price" class="text-black" value={{ $adminproduct->price }}>
             @error('price')
                 <p>{{ $message }}</p>
             @enderror

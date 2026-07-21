@@ -18,7 +18,7 @@
                     <li><a href="">Services</a></li>
                     <li><a href="">By Meaning</a></li>
                     <li><a href="">By Crystal</a></li>
-                    <li><a href="{{route('products.create')}}">Create</a></li>
+                    <li><a href="{{route('adminproducts.create')}}">Create</a></li>
                   </ul>
                 </div>
 
