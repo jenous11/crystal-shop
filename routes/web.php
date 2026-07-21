@@ -26,7 +26,6 @@ Route::view("/nav",'layouts.nav');
 Route::get('/products',[ProductController::class,'index'])->name('products.index');
 Route::get('products.show',[ProductController::class,'show'])->name('products.show');
 Route::get('/products/{product}',[ProductController::class,'show'])->name('public.products.show');
-// Route::resource('products',ProductController::class)->only(['index','show']);
-
-Route::view('/test','layouts.footer');
+Route::post('products.search',[ProductController::class,'search'])->name('public.products.search');
+Route::view('/test','components.search');
 require __DIR__.'/auth.php';

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     /**
@@ -22,6 +22,16 @@ class ProductController extends Controller
     Public function show(Product $product)
     {
       return view('products.show',compact('product'));
+    }
+
+    public function search(Product $product , Request $request){
+      $data=[
+        'name'=> $request->name,
+      ];
+      $searchedproduct=DB::table('products')
+              ->where('name',$data)
+              ->get();
+      return redirect()->route('products.index',compact('searchedproduct'));
     }
 
 }
