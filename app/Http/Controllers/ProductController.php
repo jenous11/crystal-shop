@@ -31,7 +31,7 @@ class ProductController extends Controller
       $searchedproduct=DB::table('products')
               ->where('name',$data)
               ->get();
-      return redirect()->route('products.index',compact('searchedproduct'));
+      return view('products.index',compact('searchedproduct'));
     }
 
 }

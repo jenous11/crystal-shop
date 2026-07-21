@@ -1,7 +1,7 @@
 <x-app-layout>
 <x-search />
 @if($searchedproduct)
-<x-product-card :searchedproduct="$searchedproduct"/>
+<x-searched-product-card :searchedproduct="$searchedproduct"/>
 
 @else
     <div class="  flex flex-wrap ml-[125px] gap-[20px]  ">
@@ -10,5 +10,5 @@
               @endforeach
             </div>
             {{-- {{ $products->links() }} --}}
-@endif
+{{-- @endif --}}
 </x-app-layout>
