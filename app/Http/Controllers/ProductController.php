@@ -19,18 +19,19 @@ class ProductController extends Controller
     }
 
 
-    Public function show(Product $product)
+    public function show(Product $product)
     {
       return view('products.show',compact('product'));
     }
 
-    public function search(Product $product , Request $request){
+    public function search(Request $request){
       $data=[
-        'name'=> $request->name,
+        'name'=> $request->name
       ];
       $searchedproduct=DB::table('products')
-              ->where('name',$data)
+              ->where('name','like','%'.$request->name.'%')
               ->get();
+              // dd($searchedproduct);
       return view('products.index',compact('searchedproduct'));
     }
 
