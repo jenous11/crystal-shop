@@ -7,7 +7,7 @@
                     <a href="/admin/products/{{$product->id}}/edit"> <img src="{{ asset('storage/' . $product->image) }}" alt="product image" class="opacity-90 group-hover:scale-105 "></a>
                 @endif
                  <a href="/admin/products/{{$product->id}}/edit">  <p class="mt-4" > Name: {{ $product->name }}</p> </a>
-                  <a href="/admin/products/{{$product->id}}/edit"> <p class="   "> Description: {{ $product->description }}</p></a>
+                  <a href="/admin/products/{{$product->id}}/edit"> <p class="   "> Description: {{Str::words( $product->description ,4)}}</p></a>
                   <a href="/admin/products/{{$product->id}}/edit"> <p class="   "> Price:{{ $product->price }}</p></a>
 
                 <form action="/admin/products/{{ $product->id }}" method="POST">
