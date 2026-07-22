@@ -12,9 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-           $products = Product::all();
-           $searchedproduct=null;
-    // $products = Product::paginate(5);
+      $products = Product::paginate(5);
+      $searchedproduct=null;
+      //  $products = Product::all();
     return view('products.index', compact('products','searchedproduct'));
     }
 
@@ -25,12 +25,12 @@ class ProductController extends Controller
     }
 
     public function search(Request $request){
-      $data=[
-        'name'=> $request->name
-      ];
-      $searchedproduct=DB::table('products')
-              ->where('name','like','%'.$request->name.'%')
-              ->get();
+
+      $productname=request('name');
+      // dd($searchedproduct);
+    $searchedproduct = Product::where('name', 'LIKE', "%{$productname}%")->get();
+
+
               // dd($searchedproduct);
       return view('products.index',compact('searchedproduct'));
     }

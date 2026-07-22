@@ -10,7 +10,7 @@
                   <a href="/admin/adminproducts/{{$product->id}}/edit"> <p class="   "> Description: {{Str::words( $product->description ,4)}}</p></a>
                   <a href="/admin/adminproducts/{{$product->id}}/edit"> <p class="   "> Price:{{ $product->price }}</p></a>
 
-                <form action="/admin/products/{{ $product->id }}" method="POST">
+                <form action="/admin/adminproducts/{{ $product->id }}" method="POST">
                   @csrf
                   @method('DELETE')
                   <button class="border rounded opacity-90 group-hover:scale-110   ">delete</button>

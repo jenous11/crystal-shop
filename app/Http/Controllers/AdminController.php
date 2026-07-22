@@ -11,8 +11,8 @@ class AdminController extends Controller
 {
   public function index()
   {
-    $adminproducts = Product::all();
-    // $products = Product::paginate(5);
+    // $adminproducts = Product::all();
+    $adminproducts = Product::paginate(5);
 
     return view('admin.adminproducts.adminindex', compact('adminproducts'));
   }
@@ -34,8 +34,6 @@ class AdminController extends Controller
       'category_id' => 'required',
 
     ]);
-
-
     //get data from user
    $data=[
       'name' => $request->name,
@@ -53,12 +51,12 @@ class AdminController extends Controller
 
       }
       Product::create($data);
-    return redirect()->route('adminproducts.index');
+    return redirect()->route('adminproducts.adminindex');
   }
 
   public function show(Product $adminproducts){
-    $admnproducts=Product::all();
-    return view ('admin.adminproducts.adminindex',compact('products'));
+    $adminproducts=Product::all();
+    return view ('admin.adminproducts.adminindex',compact('adminproducts'));
   }
 
  public function edit(Product $adminproduct)  // we do route model binding as we only need 1 product.
