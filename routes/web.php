@@ -29,8 +29,8 @@ Route::view("/nav",'layouts.nav');
 Route::get('/admin/adminproducts/adminindex',[AdminController::class,'index'])->name('adminproducts.adminindex');
 
 Route::get('/products',[ProductController::class,'index'])->name('products.index');
-Route::get('products.show',[ProductController::class,'show'])->name('products.show');
-Route::get('/products/{product}',[ProductController::class,'show'])->name('public.products.show');
+// Route::get('products/show',[ProductController::class,'show'])->name('products.show');
+Route::get('/products/{product}',[ProductController::class,'show'])->name('products.show');
 Route::post('/products/search',[ProductController::class,'search'])->name('products.search');
 Route::view('/test','components.search');
 

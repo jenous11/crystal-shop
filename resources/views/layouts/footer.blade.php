@@ -1,5 +1,5 @@
 {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-<footer class="flex mt-52 w-full border-t border-gray-300">
+<footer class="flex mt-5 w-full border-t border-gray-300">
     {{-- container  for image and newsletter --}}
     <div class="container ">
         {{-- image --}}

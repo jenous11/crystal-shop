@@ -3,7 +3,7 @@
     $elements = \Illuminate\Pagination\UrlWindow::make($paginator);
 @endphp
 @if ($paginator->hasPages())
-<div class="flex bg-red-300  mt-5 justify-center relative">
+<div class="flex  mt-5 justify-center relative">
 
 <span class="inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
 
