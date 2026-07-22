@@ -1,4 +1,4 @@
-<nav  class="bg-white">
+<nav  class="bg-white h-[100px]">
     <!-- Primary Navigation Menu -->
 
           <div class="flex bg-white  items-center">
