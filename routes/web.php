@@ -27,7 +27,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
 Route::view("/nav",'layouts.nav');
 
 Route::get('/admin/adminproducts/adminindex',[AdminController::class,'index'])->name('adminproducts.adminindex');
-Route::get('/admin/adminproducts/adminsearch',[AdminController::class,'search'])->name('adminproducts.adminsearch');
+Route::post('/adminproducts/adminsearch',[AdminController::class,'search'])->name('adminproducts.adminsearch');
 
 Route::get('/products',[ProductController::class,'index'])->name('products.index');
 // Route::get('products/show',[ProductController::class,'show'])->name('products.show');

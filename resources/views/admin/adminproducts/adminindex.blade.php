@@ -4,7 +4,7 @@
     @if (isset($searchedproduct) && $searchedproduct->isNotEmpty())
         <div class="flex flex-wrap ml-[25px] gap-[20px]">
             @foreach ($searchedproduct as $product)
-                {{-- <x-adminsearch :product="$product" /> --}}
+                <x-adminsearch :product="$product" />
             @endforeach
         </div>
     @elseif(isset($adminproducts))
