@@ -103,4 +103,14 @@ $data=[
     $adminproduct->delete();
     return redirect()->route('adminproducts.adminindex');
   }
+
+     public function search(Request $request){
+
+      $productname=request('name');
+      // dd($searchedproduct);
+    $searchedproduct = Product::where('name', 'LIKE', "%{$productname}%")->get();
+
+       // dd($searchedproduct);
+      return view('admin.adminproducts.adminindex',compact('searchedproduct'));
+}
 }
