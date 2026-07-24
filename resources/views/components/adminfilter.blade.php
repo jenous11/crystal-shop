@@ -1,9 +1,9 @@
 
-<div>
+<div class="m-4 " >
     <!-- Well begun is half done. - Aristotle -->
-    <form action="{{route('adminproducts.adminfilter')}}" method="post">
+    <form action="{{route('adminproducts.adminfilter')}}" method="post" class="rounded-lg">
       @csrf
-      <select name="filteroptions" id="" placeholder="select filter">
+      <select name="filteroptions" id="" placeholder="select filter" class="rounded-lg">
         select
         <option value="0">filter</option>
         <option name="is_featured" value="is_featured">featured products</option>

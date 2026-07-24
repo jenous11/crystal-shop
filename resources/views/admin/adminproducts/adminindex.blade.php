@@ -1,6 +1,15 @@
 <x-app-layout>
     <x-adminsearchpanel />
-   
+    <x-adminfilter/>
+    {{-- {{dd($filteredresult)}} --}}
+   @if(isset($filteredresult))
+   @foreach($filteredresult as $product)
+        <div class="flex flex-wrap ml-[25px] gap-[20px]">
+     <x-adminproductcard :product="$product" />
+        </div>
+     @endforeach
+   @endif
+
     @if (isset($searchedproduct) && $searchedproduct->isNotEmpty())
         <div class="flex flex-wrap ml-[25px] gap-[20px]">
             @foreach ($searchedproduct as $product)

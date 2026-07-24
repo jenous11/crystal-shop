@@ -117,11 +117,11 @@ $data=[
 public function filter(Request $request){
 
 $data=$request->input('filteroptions');
-dd($data);
+// dd($data);
 
  $filteredresult=Product::where($data,true)
                         ->get();
-                        dd($filteredresult);
-return view('test',compact('filteredresult'));
+                        // dd($filteredresult);
+return view('admin.adminproducts.adminindex',compact('filteredresult'));
 }
 }
