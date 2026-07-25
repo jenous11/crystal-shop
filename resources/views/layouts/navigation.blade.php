@@ -1,7 +1,7 @@
-<nav  class="bg-white h-[100px]">
+<nav  class="bg-white w-full flex  ">
     <!-- Primary Navigation Menu -->
 
-          <div class="flex bg-white  items-center">
+          <div class="flex bg-red-300   items-center w-full">
             <!-- Logo -->
                 <div class=" flex items-center w-[75px] ">
                     <img src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal logo"
@@ -10,7 +10,7 @@
 
                 {{-- nav options --}}
                 <div class="mx-auto ">
-                  <ul class="flex justify-start gap-24 text-black">
+                  <ul class="flex  justify-start gap-24 text-black">
                     <li><a href="{{route('products.index')}}">Shop</a></li>
                     <li><a href="">Category</a></li>
                     <li><a href="">Gifting</a></li>
