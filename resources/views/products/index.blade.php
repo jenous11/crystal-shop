@@ -1,7 +1,14 @@
 {{-- @php dd(get_class($products)); @endphp --}}
 <x-app-layout>
     <x-search />
-
+    <x-productfilter/>
+       @if(isset($filteredresult))
+   <div class=" flex">
+          @foreach($filteredresult as $product)
+     <x-adminproductcard :product="$product" />
+     @endforeach
+        </div>
+   @endif
     @if (isset($searchedproduct) && $searchedproduct->isNotEmpty() )
         <div class="  flex flex-wrap ml-[25px] gap-[20px]  ">
             @foreach ($searchedproduct as $product)

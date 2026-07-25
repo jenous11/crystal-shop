@@ -34,6 +34,7 @@ Route::get('/products',[ProductController::class,'index'])->name('products.index
 
 Route::get('/products/{product}',[ProductController::class,'show'])->name('products.show');
 Route::post('/products/search',[ProductController::class,'search'])->name('products.search');
+Route::post('/products/filter',[ProductController::class,'filter'])->name('products.productfilter');
 
 
 // Route::post('/test',[AdminController::class,'filter'])->name('adminproducts.adminfilter');

@@ -36,4 +36,14 @@ class ProductController extends Controller
       return view('products.index',compact('searchedproduct'));
     }
 
+public function filter(Request $request){
+
+$data=$request->input('filteroptions');
+// dd($data);
+
+ $filteredresult=Product::where($data,true)
+                        ->get();
+                        // dd($filteredresult);
+return view('products.index',compact('filteredresult'));
+}
 }
