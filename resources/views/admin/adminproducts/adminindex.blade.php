@@ -3,11 +3,11 @@
     <x-adminfilter/>
     {{-- {{dd($filteredresult)}} --}}
    @if(isset($filteredresult))
-   @foreach($filteredresult as $product)
-        <div class="flex flex-wrap ml-[25px] gap-[20px]">
+   <div class=" flex">
+          @foreach($filteredresult as $product)
      <x-adminproductcard :product="$product" />
-        </div>
      @endforeach
+        </div>
    @endif
 
     @if (isset($searchedproduct) && $searchedproduct->isNotEmpty())
