@@ -1,58 +1,168 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# crystal-shop 
+A simple e-commerce app made in larave which let's user to browse through the products (which are bracelets which gems). The project is till on going on, it's not completed yet. 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Products Page
+![productspage](public/images/imagestoshow/productspage.png)
+## Single Products Page (still working on it)
+![singleproductspage](public/images/imagestoshow/singleproductpage.png)
 
-## About Laravel
+## 🚀 Features
+- Breeze Authentication (Login/Register/Password Reset)
+- Product Listing
+- Product Details
+- Category Filtering
+- Cart System (still working on it)
+- Checkout Flow (still working on it)
+- Order Management (still working on it)
+- Admin Panel (still working on it)
+- Responsive Design 
+- Eloquent ORM
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*(list updates as built)*
+---
+## 🛠 Tech Stack
+- Laravel
+- Blade
+- Laravel Breeze (Auth)
+- Tailwind CSS
+- MySQL
+- Vite
+- Composer
+---
+## ⚙️ Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Clone
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/jenous11/crystal-shop.git
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Setup Env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Linux/Mac:
+```bash
+cp .env.example .env
+```
 
-## Code of Conduct
+Windows (cmd):
+```bash
+copy .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Then:
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+Edit `.env`:
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=crystal_shop
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Migrate & Seed
+```bash
+php artisan migrate --seed
+```
 
-## License
+### 5. Build Assets
+```bash
+npm run build
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Run
+```bash
+php artisan serve
+npm run dev
+```
+
+Open:
+```bash
+http://localhost:8000
+```
+---
+##  Database Schema
+
+### Categories Table
+```php
+Schema::create('categories', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->timestamps();
+});
+```
+
+### Products Table
+```php
+Schema::create('products', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->text('description');
+    $table->decimal('price', 8, 2);
+    $table->string('image')->nullable();
+    $table->foreignId('category_id')->constrained();
+    $table->boolean('is_featured')->default(false);
+    $table->boolean('is_stock')->default(true);
+    $table->timestamps();
+});
+```
+
+### Relationships
+- `Category` **hasMany** `Product`
+- `Product` **belongsTo** `Category`
+---
+## 📂 Project Structure
+```bash
+crystal-shop/
+│
+├── app/
+│   ├── Models/
+│   │   ├── Category.php
+│   │   └── Product.php
+├── bootstrap/
+├── config/
+├── database/
+│   ├── migrations/
+├── public/
+├── resources/
+├── routes/
+├── storage/
+├── tests/
+├── vendor/
+├── .env.example
+├── .gitignore
+├── artisan
+├── composer.json
+├── composer.lock
+├── package.json
+├── package-lock.json
+├── phpunit.xml
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
+---
+## 🔒 Security
+- Laravel Breeze Auth
+- CSRF Protection
+- Eloquent (SQL injection safe)
+- Hashed Passwords
+---
+## 📌 TODO
+- [ ] Cart & Checkout
+- [ ] Order Model & Migration
+- [ ] Admin Panel
+- [ ] Payment Integration
+- [ ] Wishlist
+- [ ] Reviews
+- [ ] Order Tracking
