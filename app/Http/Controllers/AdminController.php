@@ -51,7 +51,7 @@ class AdminController extends Controller
 
       }
       Product::create($data);
-    return redirect()->route('adminproducts.adminindex');
+    return redirect()->route('admin.adminproducts.index');
   }
 
   public function show(Product $adminproducts){
