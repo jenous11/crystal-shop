@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    {{-- ionicon bata hambergermenu uthara lyako --}}
+<script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -25,5 +28,12 @@
     </main>
 @include('layouts.footer')
 </body>
-
+<script>
+  function onToggleMenu(e){
+    const navLinks = document.querySelector('.nav-links')
+    // console.log(e.name)
+ e.name=e.name==='menu'?'close':'menu'
+ navLinks.classList.toggle('top-[9%]')
+  }
+  </script>
 </html>
