@@ -18,11 +18,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/admin/adminproducts/adminindex',[AdminController::class,'index'])->name('adminproducts.adminindex');
 Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
 
-    Route::resource('adminproducts', AdminController::class)->names('admin.adminproducts');
-});
+  Route::resource('adminproducts', AdminController::class)->names('admin.adminproducts');
+  });
+
+  Route::get('/admin/adminproducts/adminindex',[AdminController::class,'index'])->name('adminproducts.adminindex');
 
 
 Route::view("/nav",'layouts.nav');
