@@ -1,7 +1,7 @@
 <x-app-layout>
 
 
-    <form action="/admin/adminproducts" method="POST" enctype="multipart/form-data" class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black " >
+    <form action="{{route('adminproducts.store')}}" method="post" enctype="multipart/form-data" class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black " >
         @csrf
         {{-- name --}}
         <div class="mt-4">

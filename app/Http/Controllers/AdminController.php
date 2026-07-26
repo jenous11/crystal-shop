@@ -11,8 +11,8 @@ class AdminController extends Controller
 {
   public function index()
   {
-    // $adminproducts = Product::all();
-    $adminproducts = Product::paginate(5);
+    $adminproducts = Product::all();
+    // $adminproducts = Product::paginate(5);
 
     return view('admin.adminproducts.adminindex', compact('adminproducts'));
   }
@@ -56,7 +56,7 @@ class AdminController extends Controller
 
   public function show(Product $adminproducts){
     $adminproducts=Product::all();
-    return view ('admin.adminproducts.adminindex',compact('adminproducts'));
+    return view('admin.adminproducts.adminindex',compact('adminproducts'));
   }
 
  public function edit(Product $adminproduct)  // we do route model binding as we only need 1 product.
