@@ -1,25 +1,29 @@
 {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-<footer class=" flex flex-col md:flex-row  mt-5 w-full border-t border-gray-300">
+<footer class=" flex flex-col md:flex-row  mt-5 w-full border-t border-gray-300 justify-between">
     {{-- container  for image and newsletter --}}
-    <div class="container ">
+    <div class=" flex items-center flex-col md:grid px-5">
         {{-- image --}}
-        <div class=" flex flex-col ml-11 md:flex-row  mb-5 w-[150px] hover:scale-105 ">
+        <div class=" flex items-center w-[90px] flex-col justify-items-center  ml-11 md:flex-row  mb-5 md:w-[150px] hover:scale-105  ">
             {{-- logo --}}
             <img src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal shop log"
-                class="mb-5 ml-5 ">
+                class="mb-5  ">
         </div>
         {{-- subscribe to newsletter --}}
-        <div class="bg-green-800 flex flex-col md:flex-row gap-3 items-center w-[525px] ml-4 rounded-md mb-9 justify-evenly ">
+        <div class="bg-green-800 flex flex-col md:flex-row  items-center w-[425px]  rounded-md mb-9  ">
             <p class="text-white ml-2">Subscribe to our newsletter</p>
-            <input type="email" name="email" value=" Enter your email" class="mt-1 w-6/12 rounded  flex flex-col md:flex-row">
+          <div class="flex  md:flex justify-end">
+
+            <input type="email" name="email" placeholder="email" class="m-1 w-2/3 rounded  ">
+          </div>
+
         </div>
     </div>
 
     {{-- info --}}
-    <div class="container flex gap-5 mt-5">
+    <div class=" flex justify-end  gap-5 mt-5  mr-4">
 
-        <div>
-            Contact us
+        <div >
+            <p class="text-green-500">Contact us</p>
             <ul>
                 <li><a href=""></a>+977 9843805450, +977 9861468188 </li>
                 <li>+977 9861468188</li>
@@ -30,7 +34,7 @@
         </div>
 
         <div>
-            Quick Links
+            <p class="text-green-600">Quick Links</p>
             <ul>
                 <li>About us</li>
                 <li>Contact us</li>
@@ -41,7 +45,7 @@
         </div>
 
         <div>
-            Top Crystals
+            <p class="text-green-500">Top Crystals</p>
             <ul>
                 <li>Clear Quartz</li>
                 <li>Black Tourmaline</li>

@@ -7,7 +7,7 @@
     </a>
 
     <a href="{{ route('adminproducts.edit', $product->id) }}">
-        <p class="mt-4"> Name: {{ Str::limit($product->name,20) }}</p>
+        <p class="mt-4"> Name: {{ Str::limit($product->name,10) }}</p>
     </a>
     <a href="{{ route('adminproducts.edit', $product->id) }}">
         <p class="   "> Description: {{ Str::words($product->description, 5) }}</p>
