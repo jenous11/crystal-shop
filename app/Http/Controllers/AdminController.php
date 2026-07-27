@@ -61,6 +61,7 @@ class AdminController extends Controller
 
  public function edit(Product $adminproduct)  // we do route model binding as we only need 1 product.
  {
+  //  dd($adminproduct);
   $categories = Category::all();
     return view('admin.adminproducts.edit', compact('adminproduct','categories'));
   }

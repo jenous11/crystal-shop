@@ -1,5 +1,6 @@
 <x-app-layout>
-    <form action="/admin/adminproducts/{{ $adminproduct->id }}" method="POST" enctype="multipart/form-data " class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black" >
+  {{-- {{dd($adminproduct)}} --}}
+  <form action="{{route('adminproducts.update',$adminproduct->id)}}" method="post" enctype="multipart/form-data " class="grid w-[550px] justify-center mx-auto  gap-3 mt-36 border-4 border-black" >
         @csrf
         @method('PUT')
         {{-- name --}}
