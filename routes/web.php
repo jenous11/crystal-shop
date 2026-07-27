@@ -25,16 +25,10 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
   Route::get('/adminproducts/{adminproduct}/edit', [AdminController::class,'edit'])->name('adminproducts.edit');
   Route::put('/adminproducts/{adminproduct}', [AdminController::class,'update'])->name('adminproducts.update');
   Route::delete('/adminproducts/{adminproduct}',[AdminController::class,'destroy'])->name('adminproducts.delete');
-  // Route::delete('/adminproducts/{adminproduct}/edit',[AdminController::class,'edit'])->name('adminproducts.edit');
-  });
-
-
-
   Route::post('/adminproducts/adminsearch',[AdminController::class,'search'])->name('adminproducts.adminsearch');
   Route::post('/adminproducts/adminfilter',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
+  });
   Route::get('/products',[ProductController::class,'index'])->name('products.index');
-  // Route::get('products/show',[ProductController::class,'show'])->name('products.show');
-
   Route::get('/products/{product}',[ProductController::class,'show'])->name('products.show');
   Route::post('/products/search',[ProductController::class,'search'])->name('products.search');
   Route::post('/products/filter',[ProductController::class,'filter'])->name('products.productfilter');

@@ -1,5 +1,5 @@
 {{-- Made by Claude - Responsive Navigation --}}
-<nav x-data="{ open: false }" class="bg-orange-400 w-full">
+<nav x-data="{ open: false }" class="bg-white w-full">
 
     <div class="flex items-center justify-between px-4 py-2">
 

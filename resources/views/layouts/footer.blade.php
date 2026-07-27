@@ -1,17 +1,17 @@
 {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-<footer class="flex mt-5 w-full border-t border-gray-300">
+<footer class=" flex flex-col md:flex-row  mt-5 w-full border-t border-gray-300">
     {{-- container  for image and newsletter --}}
     <div class="container ">
         {{-- image --}}
-        <div class="mb-5 w-[150px] hover:scale-105">
+        <div class=" flex flex-col ml-11 md:flex-row  mb-5 w-[150px] hover:scale-105 ">
             {{-- logo --}}
             <img src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal shop log"
-                class="mb-5 ml-5">
+                class="mb-5 ml-5 ">
         </div>
         {{-- subscribe to newsletter --}}
-        <div class="bg-green-800 flex gap-3 items-center w-[525px] ml-4 rounded-md mb-9 justify-evenly">
+        <div class="bg-green-800 flex flex-col md:flex-row gap-3 items-center w-[525px] ml-4 rounded-md mb-9 justify-evenly ">
             <p class="text-white ml-2">Subscribe to our newsletter</p>
-            <input type="email" name="email" value=" Enter your email" class="mt-1 w-6/12 rounded ">
+            <input type="email" name="email" value=" Enter your email" class="mt-1 w-6/12 rounded  flex flex-col md:flex-row">
         </div>
     </div>
 
