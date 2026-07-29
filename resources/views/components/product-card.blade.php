@@ -3,7 +3,7 @@
 
 <div class="mt-3   w-[285px]    bg-white  ml-[20px] group rounded-lg ">
     <a href="{{ route('products.show', $product->id) }}">
-        <img src="{{ asset('storage/' . $product->image) }}" alt="product image" class="opacity-90 group-hover:scale-105 rounded-lg">
+        <img src="{{ asset('storage/' . $product->image) }}" alt="product image" class="opacity-90 group-hover:scale-105 rounded-lg max-w-full h-auto">
     </a>
     {{-- @endif --}}
     <a href="{{ route('products.show', $product->name) }}">

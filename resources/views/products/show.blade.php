@@ -2,7 +2,7 @@
 
     <div class="  gap-3 mt-12 border-4 border-black  flex ">
         <div class="   ml-10">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class=" w-[550px] h-[650px]">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="  max-w-full h-auto  md:w-[550px] ">
         </div>
         {{-- image informations --}}
         <div class=" mb-0">

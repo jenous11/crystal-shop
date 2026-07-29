@@ -5,7 +5,7 @@
        @if(isset($filteredresult))
    <div class=" flex">
           @foreach($filteredresult as $product)
-     <x-adminproductcard :product="$product" />
+     <x-product-card :product="$product" />
      @endforeach
         </div>
    @endif
