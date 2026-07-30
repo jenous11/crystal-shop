@@ -23,7 +23,7 @@ class ProductForm
                 TextInput::make('price')
                     ->required()
                     ->numeric()
-                    ->prefix('$'),
+                    ->prefix('Rs. '),
                 FileUpload::make('image')
                     ->image(),
                 Select::make('category_id')

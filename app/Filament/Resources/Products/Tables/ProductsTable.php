@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Products\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
@@ -26,10 +27,18 @@ class ProductsTable
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('name')
                     ->searchable(),
+
+  //adding description by my self
+  TextColumn::make('description')
+->Limit(15)
+->toggleable(true),
                 TextColumn::make('price')
-                    ->money()
+                ->prefix('Rs. ')
+                ->suffix('-/')
+
                     ->sortable(),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                ->toggleable(),
                 TextColumn::make('category.name')
                     ->searchable(),
                 IconColumn::make('is_featured')
@@ -41,6 +50,8 @@ class ProductsTable
                 //
             ])
             ->recordActions([
+              // to help put a delet button
+              DeleteAction::make(),
                 EditAction::make(),
             ])
             ->toolbarActions([
