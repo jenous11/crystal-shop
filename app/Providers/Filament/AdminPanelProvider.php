@@ -28,7 +28,8 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->registration()
+            ->brandName('Crystal Shop')
+            // ->registration() gives options for registraton
             ->colors([
                 'primary' => Color::Green,
             ])
@@ -39,8 +40,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                // AccountWidget::class,      these shoed a link of github for filamnet and logged in user
+                // FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
