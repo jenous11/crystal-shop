@@ -34,7 +34,7 @@ class ProductsTable
 ->toggleable(true),
                 TextColumn::make('price')
                 ->prefix('Rs. ')
-                ->suffix('-/')
+                ->suffix(' -/')
 
                     ->sortable(),
                 ImageColumn::make('image')

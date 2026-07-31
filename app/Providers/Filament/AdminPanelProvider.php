@@ -29,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('Crystal Shop')
+            ->passwordReset()
             // ->registration() gives options for registraton
             ->colors([
                 'primary' => Color::Green,
