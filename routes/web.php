@@ -38,7 +38,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
 
   // Route::view("/nav",'layouts.nav');
   // Route::post('/test',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
-  // Route::view('/test','test');
+  // Route::view('/test',[ProductController::class,'mightlikeproducts']);
   // Route::view('/testindex','testindex');
   // Route::post('/test',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
 
