@@ -12,9 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-      $products = Product::paginate(8);
+      $products = Product::paginate(5);
       $searchedproduct=null;
-      //  $products = Product::all();
     return view('products.index', compact('products','searchedproduct'));
     }
 
@@ -29,7 +28,7 @@ class ProductController extends Controller
 
       $productname=request('name');
       // dd($searchedproduct);
-    $searchedproduct = Product::where('name', 'LIKE', "%{$productname}%")->get();
+    $searchedproduct = Product::where('name', 'LIKE', "%{$productname}%")->paginate(8);
 
 
               // dd($searchedproduct);
@@ -42,7 +41,7 @@ $data=$request->input('filteroptions');
 // dd($data);
 
  $filteredresult=Product::where($data,true)
-                        ->get();
+                        ->paginate(8);
                         // dd($filteredresult);
 return view('products.index',compact('filteredresult'));
 }

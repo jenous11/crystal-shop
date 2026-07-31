@@ -20,12 +20,10 @@
         <div class="  flex flex-wrap ml-[55px] gap-[20px]  ">
             @foreach ($products as $product)
                 <x-product-card :product="$product" />
-            @endforeach
-        </div>
-        {{-- {{ $products->links() }} --}}
-        {{-- shows link of pages --}}
-         {{-- <p>REACHED ELSE BLOCK</p> --}}
-        <x-page-link :paginator="$products"/>
+                @endforeach
+              </div>
+              <x-page-link :paginator="$products"/>
+
     @endif
 
 </x-app-layout>
