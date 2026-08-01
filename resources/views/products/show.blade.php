@@ -2,7 +2,8 @@
 
     <div class="  gap-3 mt-12 border-4 border-black  flex ">
         <div class="   ml-10">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="  max-w-full h-auto  md:w-[550px] ">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                class="  max-w-full h-auto  md:w-[550px] ">
         </div>
         {{-- image informations --}}
         <div class=" mb-0">
@@ -24,22 +25,21 @@
             </div>
             {{-- add to cart --}}
             <div class="bg-green-600 text-center">
-                <button class=" " >
-                   <a href="" class="">Add To Cart</a>
-                  </button>
+                <button class=" ">
+                    <a href="" class="">Add To Cart</a>
+                </button>
             </div>
         </div>
     </div>
-    <div class="flex items-center justify-center">
-        you Might also like
+    <article class="flex justify-center">you might also like</article>
+    <div class="flex items-center justify-evenly ">
+
+        {{-- showing might like products to show below  --}}
+        @foreach ($products as $item)
+            @if ($product->id !== $item->id)
+                <x-mightlikeproducts :product="$item" />
+            @endif
+        @endforeach
     </div>
-
-    {{-- showing might like products to show below  --}}
-    @foreach($products as $product)
-     
-            <x-mightlikeproducts :product="$product" />
-
-    @endforeach
-{{-- <x-mightlikeproducts :product="$product" /> --}}
 
 </x-app-layout>
