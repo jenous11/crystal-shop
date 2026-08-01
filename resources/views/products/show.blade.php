@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="  gap-3 mt-12 border-4 border-black  flex ">
+    <div class="  gap-3 mt-12 flex ">
         <div class="   ml-10">
             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                 class="  max-w-full h-auto  md:w-[550px] ">
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <article class="flex justify-center">you might also like</article>
+    <article class="flex justify-center m-4">you might also like</article>
     <div class="flex items-center justify-evenly ">
 
         {{-- showing might like products to show below  --}}
