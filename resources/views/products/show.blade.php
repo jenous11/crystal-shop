@@ -35,8 +35,6 @@
     </div>
 
     {{-- showing might like products to show below  --}}
-   @foreach($products as $product)
-  <x-mightlikeproducts :products="$product"/>
-@endforeach
+<x-mightlikeproducts :product="$product" />
 
 </x-app-layout>
