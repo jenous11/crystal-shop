@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-      $products=Product::paginate(5);
+      $products=Product::paginate(12);
       return view('products.show',compact('product','products'));
     }
 

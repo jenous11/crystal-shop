@@ -12,11 +12,22 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+
+{{-- swipter link --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     {{-- ionicon bata hambergermenu uthara lyako --}}
 <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- swiper's buttons --}}
+    <style>
+.swiper-button-next,
+.swiper-button-prev {
+    color: green;
+}
+</style>
 </head>
 
 <body class="font-sans antialiased text-black bg-[#eeee]">
@@ -27,6 +38,11 @@
         {{ $slot }}
     </main>
 @include('layouts.footer')
+
+{{-- swiper --}}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+@stack('scripts')
+</body>
 </body>
 <script>
   function onToggleMenu(e){

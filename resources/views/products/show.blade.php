@@ -31,15 +31,38 @@
             </div>
         </div>
     </div>
-    <article class="flex justify-center m-4">you might also like</article>
-    <div class="flex items-center justify-evenly ">
+    {{-- might also like --}}
+<article class="flex justify-center m-4">you might also like</article>
 
-        {{-- showing might like products to show below  --}}
-        @foreach ($products as $item)
-            @if ($product->id !== $item->id)
-                <x-mightlikeproducts :product="$item" />
-            @endif
-        @endforeach
-    </div>
-
+<div class="swiper px-4 relative">
+  <div class="swiper-wrapper">
+    @foreach ($products as $item)
+      @if ($product->id !== $item->id)
+        <div class="swiper-slide">
+          <x-mightlikeproducts :product="$item" />
+        </div>
+      @endif
+    @endforeach
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+@push('scripts')
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop:true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 4 },
+    }
+  });
+</script>
+@endpush
 </x-app-layout>
