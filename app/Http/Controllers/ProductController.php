@@ -20,8 +20,8 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-      // $product=Product::all();
-      return view('products.show',compact('product'));
+      $products=Product::paginate(5);
+      return view('products.show',compact('product','products'));
     }
 
     public function search(Request $request){
