@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Products\Schemas;
 
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\RichEditor;
+// use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-// use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
@@ -19,7 +19,7 @@ class ProductForm
                 TextInput::make('name')
                     ->required(),
                     // made changes by self
-                RichEditor::make('description')
+                Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('price')
@@ -27,7 +27,9 @@ class ProductForm
                     ->numeric()
                     ->prefix('Rs. '),
                 FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->disk('public')
+                    ->directory('images'),
                 Select::make('category_id')
                     ->relationship('category', 'name')
                     ->required(),
