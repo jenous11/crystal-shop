@@ -18,9 +18,14 @@
                 <li><a href="">Services</a></li>
                 <li><a href="">By Meaning</a></li>
                 <li><a href="">By Crystal</a></li>
+
                 @auth
                     <li><a href="{{ route('adminproducts.create') }}">Create</a></li>
                 @endauth
+
+                @if( auth()->user()->is_admin)
+                    <li><a href="/admin">adminpanel</a></li>
+                @endif
             </ul>
         </div>
 
