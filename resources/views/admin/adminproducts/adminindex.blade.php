@@ -17,13 +17,14 @@
             @endforeach
         </div>
     @elseif(isset($adminproducts))
-        {{-- <x-pagination-info :paginator="$products" /> --}}
+            <x-pagination-info :paginator="$adminproducts" />
+
         <div class="  flex flex-wrap ml-[55px] gap-[20px]  ">
-            @foreach ($adminproducts as $product)
+          @foreach ($adminproducts as $product)
                 <x-adminproductcard :product="$product" />
-            @endforeach
-        </div>
-        {{-- <x-page-link :paginator="$products"/> --}}
+                @endforeach
+              </div>
+        <x-page-link :paginator="$adminproducts"/>
     @endif
 
 </x-app-layout>
