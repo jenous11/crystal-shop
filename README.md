@@ -8,6 +8,8 @@ A simple e-commerce app made in larave which let's user to browse through the pr
 ![productspage](public/images/imagestoshow/productspage.png)
 ## Single Products Page (still working on it)
 ![singleproductspage](public/images/imagestoshow/singleproductpage.png)
+## Admin Panel
+![adminpanelfilament](public/images/imagestoshow/adminpanelfilament.png)
 
 ## 🚀 Features
 - Breeze Authentication (Login/Register/Password Reset)
