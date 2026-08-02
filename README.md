@@ -2,7 +2,7 @@
 
 > 🚧 **Status: In Progress** — building. Not done.
 
-A simple e-commerce app made in larave which let's user to browse through the products (which are bracelets which gems). The project is till on going on, it's not completed yet. 
+A simple e-commerce app made in laravel which let's user to browse through the products (which are bracelets which gems). The project is till on going on, it's not completed yet. 
 
 ## Products Page
 ![productspage](public/images/imagestoshow/productspage.png)
