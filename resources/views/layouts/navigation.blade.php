@@ -5,7 +5,7 @@
 
         {{-- Logo --}}
         <div class="w-[75px]">
-            <img src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal logo" class="bg-white">
+                 <a href="{{route('products.index')}}"> <img src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal logo" class="bg-white"></a>
         </div>
 
         {{-- Desktop nav links --}}
