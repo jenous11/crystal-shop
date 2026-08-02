@@ -6,7 +6,7 @@
     {{-- @if ($product->image) --}}
     <a href="{{ route('products.show', $product->id) }}">
         <img src="{{ asset('storage/' . $product->image) }}" alt="product image"
-            class=" w-[285px] opacity-90 group-hover:scale-105 rounded-lg max-w-full h-auto">
+            class=" opacity-90 group-hover:scale-105 rounded-lg h-auto">
     </a>
     {{-- @endif --}}
     <a href="{{ route('products.show', $product->name) }}">
