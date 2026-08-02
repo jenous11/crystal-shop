@@ -10,10 +10,10 @@
     </a>
     {{-- @endif --}}
     <a href="{{ route('products.show', $product->name) }}">
-        <p class="mt-4"> Name:{{ Str::limit($product->name, 5) }}</p>
+        <p class="mt-4"> Name:{{ Str::limit($product->name, 25) }}</p>
     </a>
     <a href="{{ route('products.show', $product->description) }}">
-        <p class="   "> Description: {{ Str::words($product->description, 5) }}</p>
+        <p class="   "> Description: {{ Str::words($product->description, 2) }}</p>
     </a>
     <a href="{{ route('products.show', $product->price) }}">
         <p class="   "> Price:{{ $product->price }}</p>
