@@ -168,7 +168,6 @@ crystal-shop/
 ## 📌 TODO
 - [ ] Cart & Checkout
 - [ ] Order Model & Migration
-- [ ] Admin Panel
 - [ ] Payment Integration
 - [ ] Wishlist
 - [ ] Reviews
