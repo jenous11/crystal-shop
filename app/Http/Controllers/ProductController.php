@@ -45,4 +45,7 @@ $data=$request->input('filteroptions');
                         // dd($filteredresult);
 return view('products.index',compact('filteredresult'));
 }
+public function about(){
+return view('products.about');
+}
 }

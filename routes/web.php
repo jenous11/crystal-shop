@@ -29,11 +29,12 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
   Route::post('/adminproducts/adminsearch',[AdminController::class,'search'])->name('adminproducts.adminsearch');
   Route::post('/adminproducts/adminfilter',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
   });
+  
   Route::get('/products',[ProductController::class,'index'])->name('products.index');
   Route::get('/products/{product}',[ProductController::class,'show'])->name('products.show');
   Route::post('/products/search',[ProductController::class,'search'])->name('products.search');
   Route::post('/products/filter',[ProductController::class,'filter'])->name('products.productfilter');
-
+ Route::get('/about',[ProductController::class,'about'])->name('products.about');
 
 
   // Route::view("/nav",'layouts.nav');
