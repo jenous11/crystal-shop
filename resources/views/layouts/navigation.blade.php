@@ -22,10 +22,11 @@
                 @auth
                     <li><a href="{{ route('adminproducts.create') }}">Create</a></li>
                 @endauth
-
+                @auth
                 @if( auth()->user()->is_admin)
                     <li><a href="/admin">adminpanel</a></li>
                 @endif
+                @endauth
             </ul>
         </div>
 

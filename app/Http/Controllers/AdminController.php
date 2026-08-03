@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class AdminController extends Controller
 {
   public function index()
   {
+    if(!Auth::user()->is_admin) {
+    abort(403);
+}
     // $adminproducts = Product::all();
     $adminproducts = Product::paginate(8);
 
