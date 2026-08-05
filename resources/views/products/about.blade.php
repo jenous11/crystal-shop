@@ -1,6 +1,7 @@
+<x-app-layout>
 <div class="bg-red-600">
     <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
-    <section class="grid grid-cols-3 gap-4 bg-red-300">
+    <section class="grid grid-cols-2 gap-4 bg-red-300">
         <div>
 
             <h1>Infusing Energy, Crafting Meaning</h1>
@@ -15,8 +16,9 @@
         </div>
         <div class="w-full">
 
-            <img src="{{ asset('images/aboutpagehero.jpg') }}" alt="">
+            <img src="{{ asset('images/aboutpagehero.jpg') }}" alt="" width="2200" height="1331">
         </div>
 
     </section>
 </div>
+</x-app-layout>
