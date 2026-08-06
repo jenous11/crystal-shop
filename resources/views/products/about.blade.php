@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="bg-red-600">
+    <div class="">
         <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
         <section class="grid grid-cols-2 gap-10 bg-red-300">
             <div class="bg-yellow-300 flex flex-col items-start gap-5 ml-[65px]  ">
@@ -22,16 +22,18 @@
         </section>
 
         <header class="flex justify-center bg-blue-400 text-4xl">Our Story</header>
+        <div class="flex bg-purple-600  justify-center">
+          <p class="text-center text-wrap  w-1/3 ">Born in the heart of Nepal, Himalayan Crystal House is more than just a store—it's
+            a journey. A journey of energy, healing, and craftsmanship passed down through generations. </p>
+        </div>
 
-        <section class="grid grid-cols-2 bg-orange-300 mt-5">
+        <section class="grid grid-cols-2 bg-orange-300 mt-5 items-center">
               <div class="order-2  bg-red-400 items-center">
                 <header class="text-3xl text-green-600">The Himalayan Origin</header>
-                <h1>Born in the heart of Nepal, Himalayan Crystal House is more than just a store—it's
-                  a journey. A journey of energy, healing, and craftsmanship passed down through generations. </h1>
                 </div>
 
                 <div class="mt-4 ml-[65px]">
-                  <img src="{{ asset('images/himal.jpg') }} " class="order-1 rounded-3xl h-4/6" alt="" width="500"
+                  <img src="{{ asset('images/himal.jpg') }} " class="order-1 rounded-3xl h-5/6" alt="" width="500"
                  >
                 </div>
 
