@@ -36,11 +36,11 @@
                 <p>Our story begins in the majestic Himalayan mountains, where nature's purest crystals are born.
                     Each stone carries the energy of these ancient mountains, connecting you to one of Earth's most
                     spiritual places.
-                   <br>
-                   <p> We ethically source our crystals by working directly with local communities, ensuring fair practices
-                    and sustainable harvesting methods.</p>
                     <br>
-                    <p>Each crystal is ethically sourced, each jewelry piece is made with love, and every customer becomes
+                <p> We ethically source our crystals by working directly with local communities, ensuring fair practices
+                    and sustainable harvesting methods.</p>
+                <br>
+                <p>Each crystal is ethically sourced, each jewelry piece is made with love, and every customer becomes
                     part of our story.</p>
             </div>
 
@@ -50,5 +50,16 @@
             </div>
         </section>
 
+        {{-- our journey --}}
+
+        <header class="flex justify-center bg-blue-400 text-4xl mt-3">Our Journey</header>
+        <div class="flex bg-purple-600  justify-center">
+            <p class="text-center text-wrap  w-1/3 ">
+                Every crystal tells a story.
+                Ours begins in the Himalayas, where nature's purest gems meet the hands of skilled artisans to create
+                jewelry that connects with your soul. </p>
+        </div>
+
+        {{-- end of first div --}}
     </div>
 </x-app-layout>
