@@ -19,16 +19,14 @@
 
     </section>
 
-    <section class="grid grid-cols-2 bg-orange-300">
-      <div class="order-2">
-
-        <header class="flex justify-center">Our Story</header>
+    <section class=" bg-orange-300 mt-5">
+      <header class="flex justify-center bg-blue-400 text-4xl">Our Story</header>
+      <div class="order-2 justify-center bg-red-400 ">
         <h1>Born in the heart of Nepal, Himalayan Crystal House is more than just a store—it's
           a journey. A journey of energy, healing, and craftsmanship passed down through generations. </h1>
       </div>
 
-        <div class="mt-4 ">
-
+        <div class="mt-4 ml-[65px]">
   <img src="{{asset('images/himal.jpg')}} " class="order-1 " alt="" width="500" height="331" >
 </div>
 
