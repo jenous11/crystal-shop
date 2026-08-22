@@ -26,7 +26,13 @@
             {{-- add to cart --}}
             <div class="bg-green-600 text-center">
                 <button class=" ">
-                    <a href="" class="">Add To Cart</a>
+
+
+                      <form method="POST" action="{{ route('cart.store',$product->id) }}">
+                        @csrf
+                        <button type="submit" class="text-black py-1">Add to Cart</button>
+                    </form>
+                    {{-- <a href="{{route('cart.store',$product->id)}}" class="">Add To Cart</a> --}}
                 </button>
             </div>
         </div>

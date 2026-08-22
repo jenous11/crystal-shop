@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[ProductController::class,'index'])->name('public.products.index');
 
-// Route::get('/dashboard',[AdminController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
+Route::get('/dashboard',[ProductController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 
 
 
@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
   Route::post('/products/search',[ProductController::class,'search'])->name('products.search');
   Route::post('/products/filter',[ProductController::class,'filter'])->name('products.productfilter');
  Route::get('/about',[ProductController::class,'about'])->name('products.about');
- Route::get('/cart',[CartController::class,'store'])->name('cart.store');
+ Route::post('/cart/{product}',[CartController::class,'store'])->name('cart.store');
 
 
   // Route::view("/nav",'layouts.nav');
