@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
   Route::post('/products/filter',[ProductController::class,'filter'])->name('products.productfilter');
  Route::get('/about',[ProductController::class,'about'])->name('products.about');
  Route::post('/cart/{product}',[CartController::class,'store'])->name('cart.store');
+ Route::get('/cart',[CartController::class,'index'])->name('cart');
 
 
   // Route::view("/nav",'layouts.nav');

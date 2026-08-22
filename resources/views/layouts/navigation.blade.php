@@ -18,6 +18,7 @@
                 <li><a href="">Services</a></li>
                 <li><a href="">By Meaning</a></li>
                 <li><a href="">By Crystal</a></li>
+                <li><a href="{{route('cart')}}"> <i class="fa-solid fa-cart-shopping"></i> </a></li>
 {{--
                 @auth
                     <li><a href="{{ route('adminproducts.create') }}">Create</a></li>

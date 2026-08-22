@@ -19,7 +19,17 @@ if ($cartItem->wasRecentlyCreated) {
    // do nothing, DB default already made it 1
 } else {
    $cartItem->increment('quantity');
+   }
    return redirect()->back()->with('success', 'item added to the cart');
+
+}
+
+public function index(Product $product){
+if(Auth::check()){
+  // $user_id=Auth::id();
+  $cartItems = CartItems::with('user' ,'product')->get();
+  // dd($cartItem);
+  return view('cart.index',compact('cartItems'));
 }
 
 }

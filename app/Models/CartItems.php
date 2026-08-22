@@ -11,9 +11,9 @@ class CartItems extends Model
 {
     //
     protected $fillable =[ 'user_id','product_id','quantity' ];
-  public function products(): HasMany
+  public function product(): BelongsTo
   {
-    return $this->hasMany(Product::class);
+    return $this->belongsTo(Product::class);
   }
   public function user(): BelongsTo
   {
