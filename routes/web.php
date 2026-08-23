@@ -1,6 +1,5 @@
 <?php
 
-// use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
@@ -17,17 +16,6 @@ Route::middleware('auth')->group(function () {
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
-//   // Route::get('/dashboard',[AdminController::class,'index'])->name('adminproducts.adminindex');
-//   Route::get('/adminproducts', [AdminController::class,'index'])->name('adminproducts.adminindex');
-//   Route::get('/adminproducts/create', [AdminController::class,'create'])->name('adminproducts.create');
-//   Route::post('/adminproducts', [AdminController::class,'store'])->name('adminproducts.store');
-//   Route::get('/adminproducts/{adminproduct}/edit', [AdminController::class,'edit'])->name('adminproducts.edit');
-//   Route::put('/adminproducts/{adminproduct}', [AdminController::class,'update'])->name('adminproducts.update');
-//   Route::delete('/adminproducts/{adminproduct}',[AdminController::class,'destroy'])->name('adminproducts.delete');
-//   Route::post('/adminproducts/adminsearch',[AdminController::class,'search'])->name('adminproducts.adminsearch');
-//   Route::post('/adminproducts/adminfilter',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
-//   });
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
@@ -37,13 +25,8 @@ Route::get('/about', [ProductController::class, 'about'])->name('products.about'
 Route::post('/cart/{product}', [CartController::class, 'store'])->name('cart.store');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::delete('/cart/{cartItem}', [CartController::class, 'delete'])->name('cartdelete');
+Route::post('/cart/{product}/json', [CartController::class, 'storejson'])->name('cart.storejson');
 
-
-// Route::view("/nav",'layouts.nav');
-// Route::post('/test',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
-// Route::view('/test',[ProductController::class,'mightlikeproducts']);
-// Route::view('/testindex','testindex');
-// Route::post('/test',[AdminController::class,'filter'])->name('adminproducts.adminfilter');
 
 
 
