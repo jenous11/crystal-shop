@@ -101,7 +101,7 @@
                         console.log("Server response:", result);
                     }
                 } catch (error) {
-                    status.textContent = "Network error.";
+
                     console.error("Fetch error:", error);
                 }
             });
