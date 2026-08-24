@@ -24,50 +24,87 @@
                 <p>{{ $product->description }}</p>
             </div>
             {{-- add to cart --}}
-            <div class="bg-green-600 text-center">
 
+            <form id="addToCartForm" method="POST" action="{{ route('cart.storejson', $product->id) }}">
+                @csrf
+                <button type="submit" class="text-black py-1 bg-green-500">Add to Cart</button>
+            </form>
 
-
-                      <form  id="addToCartForm"  method="POST" action="{{ route('cart.store',$product->id) }}">
-                        @csrf
-                        <button type="submit" class="text-black py-1">Add to Cart</button>
-                    </form>
-
-            </div>
         </div>
     </div>
+    </div>
     {{-- might also like --}}
-<article class="flex justify-center m-4">you might also like</article>
+    <article class="flex justify-center m-4">you might also like</article>
 
-<div class="swiper px-4 relative">
-  <div class="swiper-wrapper">
-    @foreach ($products as $item)
-      @if ($product->id !== $item->id)
-        <div class="swiper-slide">
-          <x-mightlikeproducts :product="$item" />
+    <div class="swiper px-4 relative">
+        <div class="swiper-wrapper">
+            @foreach ($products as $item)
+                @if ($product->id !== $item->id)
+                    <div class="swiper-slide">
+                        <x-mightlikeproducts :product="$item" />
+                    </div>
+                @endif
+            @endforeach
         </div>
-      @endif
-    @endforeach
-  </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
-@push('scripts')
-<script>
-  const swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop:true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      320: { slidesPerView: 1 },
-      640: { slidesPerView: 2 },
-      1024: { slidesPerView: 4 },
-    }
-  });
-</script>
-@endpush
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    @push('scripts')
+        <script>
+            const swiper = new Swiper('.swiper', {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1
+                    },
+                    640: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 4
+                    },
+                }
+            });
+
+
+            // to get the id from the button
+            let cartitem = document.getElementById("addToCartForm");
+            const token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+            cartitem.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+
+                try {
+                    // 3. Send data using fetch()
+                    const response = await fetch(cartitem.action, {
+                        method: "POST",
+
+                        headers: {
+                            'Content-Type': 'application/json',
+                            "Accept": "application/json",
+                            "X-CSRF-TOKEN": token,
+                        }
+
+                    });
+
+                    // 4. Handle response
+                    if (response.ok) {
+                        const result = await response.json();
+
+                        console.log("Server response:", result);
+                    }
+                } catch (error) {
+                    status.textContent = "Network error.";
+                    console.error("Fetch error:", error);
+                }
+            });
+        </script>
+    @endpush
 </x-app-layout>
