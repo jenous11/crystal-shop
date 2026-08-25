@@ -75,6 +75,7 @@
 
             // to get the id from the button
             let cartitem = document.getElementById("addToCartForm");
+            let cartBadge = document.getElementById("cartBadge");
             const token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 
             cartitem.addEventListener("submit", async (event) => {
@@ -98,6 +99,7 @@
                     if (response.ok) {
                         const result = await response.json();
 
+                        cartBadge.textContent=result.cartCount;
                         console.log("Server response:", result);
                     }
                 } catch (error) {

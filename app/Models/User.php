@@ -32,9 +32,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-  public function cartitems(): BelongsTo
+  public function cartitems(): HasMany
   {
-    return $this->belongsTo(CartItems::class);
+    return $this->hasMany(CartItems::class);
   }
 
 }

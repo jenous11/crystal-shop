@@ -5,7 +5,9 @@
 
         {{-- Logo --}}
         <div class="w-[75px]">
-                 <a href="{{route('products.index')}}"> <img src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal logo" class="bg-white"></a>
+            <a href="{{ route('products.index') }}"> <img
+                    src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}" alt="crystal logo"
+                    class="bg-white"></a>
         </div>
 
         {{-- Desktop nav links --}}
@@ -18,13 +20,15 @@
                 <li><a href="">Services</a></li>
                 <li><a href="">By Meaning</a></li>
                 <li><a href="">By Crystal</a></li>
-                <li><a href="{{route('cart.index')}}"> <i class="fa-solid fa-cart-shopping" alt="cart"></i> </a></li>
-{{--
+                <li class=" "><a href="{{ route('cart.index') }}"> <span class="text-xs grid  ml-3  p-0"
+                            id="cartBadge">{{ auth()->check() ? auth()->user()->cartItems()->sum('quantity') : 0 }}</span> <i class="fa-solid fa-cart-shopping mb-5  " alt="cart"> </i>
+                    </a></li>
+                {{--
                 @auth
                     <li><a href="{{ route('adminproducts.create') }}">Create</a></li>
                 @endauth
                 @auth
-                @if( auth()->user()->is_admin)
+                @if (auth()->user()->is_admin)
                     <li><a href="/admin">adminpanel</a></li>
                 @endif
                 @endauth --}}
