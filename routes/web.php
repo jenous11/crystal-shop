@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'index'])->name('public.products.index');
@@ -27,7 +28,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::delete('/cart/{cartItem}', [CartController::class, 'delete'])->name('cartdelete');
 Route::post('/cart/{product}/json', [CartController::class, 'storejson'])->name('cart.storejson');
 
-
-
+Route::post('/userloginform', [CheckoutController::class,'',]);
 
 require __DIR__ . '/auth.php';

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->integer('total');
+            $table->foreignId('user_id')->constrained();
+            $table->decimal('total',8,2);
             $table->enum('status',['pending','paid','cancelled'])->default('pending');
-            
+
             $table->timestamps();
         });
     }
