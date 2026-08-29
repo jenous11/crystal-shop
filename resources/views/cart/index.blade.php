@@ -8,7 +8,7 @@
             </div>
             @if ($cartItems)
                 @foreach ($cartItems as $product)
-                    <input type="checkbox" id="checkboxchild" data-selectable data-price="{{ $product->product->price }}"
+                    <input type="checkbox"  data-selectable data-price="{{ $product->product->price }}"
                         data-item-id="{{ $product->id }}">
 
                     <div class="border border-red-600 grid grid-cols-3 gap-4 ">
@@ -45,30 +45,42 @@
 
         <div class="col-start-2 border border-red-400">
             <h1>Order Summary</h1>
-            <h2>subtotal </h2>
+            <h2>subtotal:<span id="subtotal-price">0</span> </h2>
             <h2>shipping fee </h2>
 
-            <p class="" >total:<span id="total-price"> 0</span> </p>
+            <p class="">total:<span id="total-price"> 0</span> </p>
             <button type="submit"> Proceed to checkout</button>
         </div>
     </div>
 
     <script>
-        const selectAll = document.getElementById('checkboxparent');
-        const checkboxes = document.querySelectorAll('[data-selectable]'); // or any selector
-        const price = document.querySelectorAll('[data-price]'); // or any selector
-        const id = document.querySelectorAll('[data-item-id]'); // ← you need this
-        const totalprice = document.getElementById('total-price');
+    const selectAll = document.getElementById('checkboxparent');
+    const checkboxes = document.querySelectorAll('[data-selectable]');
+    const totalprice = document.getElementById('total-price');
+    const subtotalprice = document.getElementById('subtotal-price');
 
-        selectAll.addEventListener('change', function() {
-            checkboxes.forEach(cb => cb.checked = this.checked);
+    selectAll.addEventListener('change', function() {
+        checkboxes.forEach(cb => cb.checked = this.checked);
 
+        const total = [...checkboxes]
+            .filter(cb => cb.checked)
+            .reduce((sum, cb) => sum + Number(cb.dataset.price), 0);
+
+        subtotalprice.textContent = total;
+        totalprice.textContent = total;
+    });
+
+    // Also update totals when individual boxes are toggled
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
             const total = [...checkboxes]
                 .filter(cb => cb.checked)
                 .reduce((sum, cb) => sum + Number(cb.dataset.price), 0);
-                console.log(total);
-                totalprice.textContent=total;
+
+            subtotalprice.textContent = total;
+            totalprice.textContent = total;
         });
-    </script>
+    });
+</script>
 
 </x-app-layout>
