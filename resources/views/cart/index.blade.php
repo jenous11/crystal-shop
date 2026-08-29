@@ -8,7 +8,7 @@
             </div>
             @if ($cartItems)
                 @foreach ($cartItems as $product)
-                    <input type="checkbox" id="checkboxchild" data-selectable data-price="{{ $product->product->price }}""
+                    <input type="checkbox" id="checkboxchild" data-selectable data-price="{{ $product->product->price }}"
                         data-item-id="{{ $product->id }}">
 
                     <div class="border border-red-600 grid grid-cols-3 gap-4 ">
@@ -48,7 +48,7 @@
             <h2>subtotal </h2>
             <h2>shipping fee </h2>
 
-            <p>total </p>
+            <p class="" >total:<span id="total-price"> 0</span> </p>
             <button type="submit"> Proceed to checkout</button>
         </div>
     </div>
@@ -58,11 +58,16 @@
         const checkboxes = document.querySelectorAll('[data-selectable]'); // or any selector
         const price = document.querySelectorAll('[data-price]'); // or any selector
         const id = document.querySelectorAll('[data-item-id]'); // ← you need this
+        const totalprice = document.getElementById('total-price');
 
         selectAll.addEventListener('change', function() {
             checkboxes.forEach(cb => cb.checked = this.checked);
 
-            const total =[...price].filter(cb=>cb.checked).reduce((sum,cb)=>sum+Number(cb))
+            const total = [...checkboxes]
+                .filter(cb => cb.checked)
+                .reduce((sum, cb) => sum + Number(cb.dataset.price), 0);
+                console.log(total);
+                totalprice.textContent=total;
         });
     </script>
 
