@@ -49,7 +49,10 @@
             <h2>shipping fee </h2>
 
             <p class="">total:<span id="total-price"> 0</span> </p>
-            <button type="submit"> Proceed to checkout</button>
+            <form action="{{route('checkout.store')}}" method="post">
+
+              <button type="submit"> Proceed to checkout</button>
+            </form>
         </div>
     </div>
 

@@ -28,6 +28,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::delete('/cart/{cartItem}', [CartController::class, 'delete'])->name('cartdelete');
 Route::post('/cart/{product}/json', [CartController::class, 'storejson'])->name('cart.storejson');
 
-Route::post('/userloginform', [CheckoutController::class,'',]);
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 require __DIR__ . '/auth.php';
