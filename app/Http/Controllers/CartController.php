@@ -55,7 +55,8 @@ class CartController extends Controller
 
   public function delete(CartItems $cartItem)
   {
-    // dd($cartItem);
+
+    $this->authorize('delete',$cartItem);
     $cartItem->delete();
     return redirect()->route('cart.index');
   }

@@ -27,7 +27,11 @@ class CheckoutController extends Controller
           OrderItems::create(['order_id' => $order->id, 'product_id' => $items->product->id, 'quantity' => $items->quantity, 'price' => $items->product->price]);
         }
         CartItems::where('user_id', $user_id)->delete();
-      });
+        });
+        return redirect()->route('cart.index')->with('success','checkout was sucessfull!');
+    }
+    else{
+      return "error, not the authenticated user";
     }
   }
 }

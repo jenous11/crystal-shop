@@ -8,6 +8,7 @@
             </div>
             @if ($cartItems)
                 @foreach ($cartItems as $product)
+                          @if($product->user_id===auth()->user()->id)
                     <input type="checkbox"  data-selectable data-price="{{ $product->product->price }}"
                         data-item-id="{{ $product->id }}">
 
@@ -30,13 +31,18 @@
                             <p> product id: {{ $product_id = $product->product->id }}</p>
                             <p> cart id: {{ $cart_items = $product->id }}</p>
                             <p> price: {{ $product->product->price }}</p>
+                            @auth
+                            @if($product->user_id===auth()->user()->id)
                             <form action="{{ route('cartdelete', $product->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button> <i class="fa-solid fa-trash"></i> </button>
                             </form>
+                          @endif
+                          @endauth
                         </div>
                     </div>
+                    @endif
                 @endforeach
         </div>
     @else
@@ -51,7 +57,9 @@
             <p class="">total:<span id="total-price"> 0</span> </p>
             <form action="{{route('checkout.store')}}" method="post">
 
+
               <button type="submit"> Proceed to checkout</button>
+
             </form>
         </div>
     </div>
