@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Orders extends Model
 {
     //
-  protected $fillable =[ 'status' ];
+  protected $fillable =[ 'status','user_id','total' ];
   public function orderitems(): HasMany
   {
-    return $this->hasMany(OrderItems::class);
+    return $this->hasMany(OrderItems::class,'order_id');
   }
 }

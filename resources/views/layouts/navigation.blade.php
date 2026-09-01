@@ -68,6 +68,9 @@
                                 onclick="event.preventDefault(); this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
+                                <x-dropdown-link :href="route('orders.index')">
+                            {{__('My Orders')}}
+                        </x-dropdown-link >`
                         </form>
                     @else
                         <x-dropdown-link :href="route('login')">
@@ -75,7 +78,8 @@
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('register')">
                             {{ __('Register') }}
-                        </x-dropdown-link>
+                          </x-dropdown-link>
+
                     @endauth
                 </x-slot>
             </x-dropdown>
