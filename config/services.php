@@ -36,7 +36,7 @@ return [
     ],
 
     'esewa'=>[
-      'esewa_merchant_code'=>env('ESWA_MERCHANT'),
+      'esewa_merchant_code'=>env('ESEWA_MERCHANT_CODE'),
       'esewa_secret_key'=>env('ESEWA_SECRET_KEY'),
       'esewa_base_url'=>env('ESEWA_BASE_URL'),
       'esewa_status_url'=>env('ESEWA_STATUS_URL')
