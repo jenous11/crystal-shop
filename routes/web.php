@@ -30,5 +30,8 @@ Route::delete('/cart/{cartItem}', [CartController::class, 'delete'])->name('cart
 Route::post('/cart/{product}/json', [CartController::class, 'storejson'])->name('cart.storejson');
 
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
-Route::get('/order/index',[MyOrdersController::class,'index'])->name('orders.index');
+Route::get('/order/index', [MyOrdersController::class, 'index'])->name('orders.index');
+// Route::get('/esewapayment', [CheckoutController::class, 'esewa.paywithEsewa'])->name('esewa.esewaform');
+Route::get('/success', [CheckoutController::class, 'esewaSuccess'])->name('esewa.success');
+Route::get('/failure', [CheckoutController::class, 'esewaFailure'])->name('esewa.failure');
 require __DIR__ . '/auth.php';

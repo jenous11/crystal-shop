@@ -35,9 +35,50 @@ class CheckoutController extends Controller
       });
       $gateway = new EsewaGateway();
       $signature = $gateway->generateSignature($order);
-      return redirect()->route('cart.index')->with('success', 'checkout was sucessfull!');
+
+      return $this->payWithEsewa($order, $signature);
+      // return redirect()->route('esewaform');
     } else {
       return "error, not the authenticated user";
     }
+  }
+  public function payWithEsewa($order, $signature)
+  {
+    $data = [
+      'total_amount' => $order->total,
+      'amount' => $order->total,
+      'transaction_uuid' => $order->transaction_uuid,
+      'product_code' => 'EPAYTEST',
+      'signature' => $signature,
+      'success_url' => route('esewa.success'),
+      'failure_url' => route('esewa.failure')
+    ];
+    return view('esewa.esewaform', compact('data'));
+  }
+  public function esewaSuccess()
+  {
+    $data = json_decode(base64_decode(request()->query('data')), true);
+
+    // Verify signature
+    $fields = explode(',', $data['signed_field_names']);
+    $message = implode(',', array_map(fn($f) => "$f=" . $data[$f], $fields));
+    $expected = base64_encode(hash_hmac('sha256', $message, config('services.esewa.esewa_secret_key'), true));
+
+    if ($expected !== $data['signature']) {
+      return view('esewa.failure');
+    }
+
+    // Update order
+    $order = Orders::where('transaction_uuid', $data['transaction_uuid'])->first();
+    $order->status = 'paid';
+    $order->transaction_code = $data['transaction_code'];
+    $order->save();
+
+    return view('esewa.success', compact('data'));
+  }
+
+  public function esewaFailure()
+  {
+    return view('esewa.failure');
   }
 }
