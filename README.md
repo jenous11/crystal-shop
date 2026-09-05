@@ -166,9 +166,6 @@ crystal-shop/
 - Hashed Passwords
 ---
 ## 📌 TODO
-- [ ] Cart & Checkout
-- [ ] Order Model & Migration
-- [ ] Payment Integration
 - [ ] Wishlist
 - [ ] Reviews
 - [ ] Order Tracking
