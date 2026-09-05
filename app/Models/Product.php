@@ -3,6 +3,7 @@ namespace App\Models;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -19,8 +20,8 @@ class Product extends Model
   {
     return $this->belongsTo(Category::class);
   }
-    public function cartitems(): BelongsTo
+    public function cartitems(): HasMany
   {
-    return $this->belongsTo(CartItems::class);
+    return $this->hasMany(CartItems::class);
   }
 }
