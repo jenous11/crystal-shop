@@ -6,6 +6,7 @@ use App\Policies\CartItemPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+      if (str_contains(config('app.url'), 'https://')) {
+    \URL::forceScheme('https');
+}
         // i am unguarding the model
         Gate::policy(CartItems::class, CartItemPolicy::class);
         Model::unguard();
