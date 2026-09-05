@@ -58,7 +58,7 @@ class CheckoutController extends Controller
   public function esewaSuccess()
   {
     $data = json_decode(base64_decode(request()->query('data')), true);
-
+// dd($data);
     // Verify signature
     $fields = explode(',', $data['signed_field_names']);
     $message = implode(',', array_map(fn($f) => "$f=" . $data[$f], $fields));
