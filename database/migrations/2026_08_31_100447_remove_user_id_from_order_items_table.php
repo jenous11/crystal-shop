@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::table('order_items', function (Blueprint $table) {
-    $table->dropColumn('user_id');
-});
-    }
+if (Schema::hasColumn('order_items', 'user_id')) {
+    Schema::table('order_items', function (Blueprint $table) {
+        $table->dropColumn('user_id');
+    });
+}}
 
     /**
      * Reverse the migrations.
