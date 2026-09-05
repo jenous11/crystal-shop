@@ -58,23 +58,20 @@ class CheckoutController extends Controller
   public function esewaSuccess()
   {
     $data = json_decode(base64_decode(request()->query('data')), true);
-// dd($data);
-    // Verify signature
     $fields = explode(',', $data['signed_field_names']);
     $message = implode(',', array_map(fn($f) => "$f=" . $data[$f], $fields));
+    // dd($message);
     $expected = base64_encode(hash_hmac('sha256', $message, config('services.esewa.esewa_secret_key'), true));
+    if ($expected === $data['signature']) {
+      $order = Orders::where('transaction_uuid', $data['transaction_uuid'])->first();
+      $order->status = 'paid';
+      $order->transaction_code = $data['transaction_code'];
+      $order->save();
 
-    if ($expected !== $data['signature']) {
+      return view('esewa.success', compact('data'));
+    } else {
       return view('esewa.failure');
     }
-
-    // Update order
-    $order = Orders::where('transaction_uuid', $data['transaction_uuid'])->first();
-    $order->status = 'paid';
-    $order->transaction_code = $data['transaction_code'];
-    $order->save();
-
-    return view('esewa.success', compact('data'));
   }
 
   public function esewaFailure()
