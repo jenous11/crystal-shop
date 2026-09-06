@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
    */
   public function run(): void
   {
-  User::firstOrCreate(
+User::firstOrCreate(
     ['email' => 'test@example.com'],
-    ['name' => 'Test User']
+    ['name' => 'Test User', 'password' => bcrypt('password')]
 );
 
     $category = Category::factory()->create([
