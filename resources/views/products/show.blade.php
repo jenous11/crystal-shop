@@ -7,13 +7,10 @@
         </div>
         {{-- image informations --}}
         <div class=" mb-0">
-
             {{-- name --}}
             <div>
-
                 <p class="text-green-500 text-[21px] ">{{ $product->name }}</p>
             </div>
-
             {{-- price --}}
             <div>
                 <p class="text-green-500 text-[21px]">{{ $product->price }}</p>
@@ -99,7 +96,7 @@
                     if (response.ok) {
                         const result = await response.json();
 
-                        cartBadge.textContent=result.cartCount;
+                        cartBadge.textContent = result.cartCount;
                         console.log("Server response:", result);
                     }
                 } catch (error) {

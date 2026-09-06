@@ -10,7 +10,7 @@
         </div>
     @endif
     @if (isset($searchedproduct) && $searchedproduct->isNotEmpty())
-        <div class="  flex flex-wrap ml-[25px] gap-[20px]  ">
+        <div class="flex flex-wrap   gap-[20px]  ">
             @foreach ($searchedproduct as $product)
                 <x-searched-product :product="$product" />
             @endforeach
@@ -18,7 +18,7 @@
     @elseif(isset($products))
         {{-- shows x of total pages  --}}
         <x-pagination-info :paginator="$products" />
-        <div class="  flex flex-wrap ml-[55px] gap-[20px]  ">
+        <div class="  flex flex-wrap   gap-[20px] ml-[35px]  ">
             @foreach ($products as $product)
                 <x-product-card :product="$product" />
             @endforeach
