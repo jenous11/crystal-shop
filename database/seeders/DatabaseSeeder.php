@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
    */
   public function run(): void
   {
-    User::firstOrCreate([
-      'name' => 'Test User',
-      'email' => 'test@example.com',
-    ]);
+  User::firstOrCreate(
+    ['email' => 'test@example.com'],
+    ['name' => 'Test User']
+);
 
     $category = Category::factory()->create([
       'name' => 'bracelet'
