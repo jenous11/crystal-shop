@@ -22,7 +22,7 @@
             </div>
             {{-- add to cart --}}
 
-            <form id="addToCartForm" method="POST" action="{{ route('cart.storejson', $product->id) }}">
+            <form id="addToCartForm" method="POST" action="{{ route('cart.index', $product->id) }}">
                 @csrf
                 <button type="submit" class="text-black py-1 bg-green-500">Add to Cart</button>
             </form>

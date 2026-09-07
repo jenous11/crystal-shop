@@ -50,6 +50,7 @@ class CartController extends Controller
       $cartItems = CartItems::with('user', 'product')->get();
       // dd($cartItems);
       return view('cart.index', compact('cartItems'));
+    
     }
   }
 
