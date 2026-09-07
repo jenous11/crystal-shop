@@ -18,7 +18,7 @@
     @elseif(isset($products))
         {{-- shows x of total pages  --}}
         <x-pagination-info :paginator="$products" />
-        <div class="  flex flex-wrap   gap-[20px] ml-[35px]  ">
+        <div class=" ml-0 gap-0 lg:flex lg:flex-wrap lg:ml-[35px] lg:gap-5 ">
             @foreach ($products as $product)
                 <x-product-card :product="$product" />
             @endforeach
