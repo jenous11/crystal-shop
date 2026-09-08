@@ -20,7 +20,7 @@
                 <li><a href="">Services</a></li>
                 <li><a href="">By Meaning</a></li>
                 <li><a href="">By Crystal</a></li>
-                <li class=" bg"><a href="{{ route('cart.index') }}"> <span
+                <li class=" "><a href="{{ route('cart.index') }}"> <span
                             class="text-sm  grid  ml-4  absolute  text-black  mb-4 bg-white rounded-sm "
                             id="cartBadge">{{ auth()->check() ? auth()->user()->cartItems()->sum('quantity') : 0 }}</span>
                         <i class="fa-solid fa-cart-shopping " alt="cart"> </i>
@@ -102,6 +102,11 @@
             <li><a href="">Services</a></li>
             <li><a href="">By Meaning</a></li>
             <li><a href="">By Crystal</a></li>
+            <li class=" "><a href="{{ route('cart.index') }}"> <span
+                            class="text-sm  grid  ml-4  absolute  text-black  mb-4 bg-white rounded-sm "
+                            id="cartBadge">{{ auth()->check() ? auth()->user()->cartItems()->sum('quantity') : 0 }}</span>
+                        <i class="fa-solid fa-cart-shopping " alt="cart"> </i>
+                    </a></li>
             {{-- @auth
                 <li><a href="{{ route('adminproducts.create') }}">Create</a></li>
             @endauth --}}
