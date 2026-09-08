@@ -1,37 +1,40 @@
+{{-- @props(['product']) --}}
 <x-app-layout>
 
-    <div class="  gap-3 mt-12 flex ">
-        <div class="   ml-10">
+    <div class="  gap-10 mt-12  grid grid-cols-2 ">
+        <div class="   ml-10 col-start-1">
             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
-                class="  max-w-full h-auto  md:w-[550px] ">
+                class="  max-w-full h-[540px]  w-[750px] object-cover ">
         </div>
-        {{-- image informations --}}
-        <div class=" mb-0">
+        {{-- product informations --}}
+        <div class=" mb-0 col-start-2 ">
             {{-- name --}}
             <div>
-                <p class="text-green-500 text-[21px] ">{{ $product->name }}</p>
+                <p class="text-[#3A5A32] text-4xl tracking-wider ">{{ Str::title($product->name) }}</p>
             </div>
             {{-- price --}}
             <div>
-                <p class="text-green-500 text-[21px]">{{ $product->price }}</p>
+                <p class="mt-[2rem]  text-green-800 text-2xl "> Rs {{ $product->price }}</p>
             </div>
+            <hr class="bg-gray-700">
             {{-- description --}}
-            <div class="mt-5">
-                Description
-                <p>{{ $product->description }}</p>
+            <div class="mt-5 mb-28 ">
+                <p>Description</p>
+                <p class="text-gray-500">{{ $product->description }}</p>
             </div>
             {{-- add to cart --}}
 
-            <form id="addToCartForm" method="POST" action="{{ route('cart.index', $product->id) }}">
+            <form id="addToCartForm" method="POST" action="{{ route('cart.storejson', $product->id) }}" class="mt-[320px]">
                 @csrf
-                <button type="submit" class="text-black py-1 bg-green-500">Add to Cart</button>
+                <button type="submit" class="text-white py-2 bg-[#3A5A32] w-[650px] rounded-md"> <i
+                        class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
             </form>
 
         </div>
     </div>
     </div>
     {{-- might also like --}}
-    <article class="flex justify-center m-4">you might also like</article>
+    <article class="flex justify-center m-8">You Might Also Like </article>
 
     <div class="swiper px-4 relative">
         <div class="swiper-wrapper">

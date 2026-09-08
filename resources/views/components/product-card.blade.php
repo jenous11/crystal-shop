@@ -21,8 +21,8 @@
             <p class="text-green-950"> Rs {{ $product->price }}</p>
         </a>
 
-        <a href="{{route('products.show',$product->id)}}" class="">
-<i class="fa-solid fa-circle-arrow-right ml-[250px]  hidden group-hover:block  "></i>
+        <a href="{{ route('products.show', $product->id) }}" class="">
+            <i class="fa-solid fa-circle-arrow-right ml-[250px]  hidden group-hover:block  "></i>
         </a>
 
     </div>
