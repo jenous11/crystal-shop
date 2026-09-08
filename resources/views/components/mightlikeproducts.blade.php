@@ -11,8 +11,8 @@
     <div class="ml-3">
 
         {{-- @endif --}}
-        <a href="{{ route('products.show', $product->name) }}" class="mb-2 ml-3 text-wrap">
-            <p class="mt-4 text-wrap"> Name:{{ Str::limit($product->name, 25) }}</p>
+        <a href="{{ route('products.show', $product->name) }}" class="mb-2 ml-3 ">
+            <p class="mt-4 text-balance">{{ $product->name }}</p>
         </a>
         <a href="{{ route('products.show', $product->description) }}" class="mb-2 ml-3 text-wrap">
             <p class="text-gray-500 break-words whitespace-normal">

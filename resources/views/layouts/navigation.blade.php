@@ -14,6 +14,7 @@
         <div class="hidden md:flex">
             <ul class="flex items-center gap-[4vw] text-black">
                 <li><a href="{{ route('products.index') }}">Shop</a></li>
+                <li><a href="{{route('products.about')}}">About</a></li>
                 <li><a href="">Category</a></li>
                 <li><a href="">Gifting</a></li>
                 <li><a href="">Blogs</a></li>
