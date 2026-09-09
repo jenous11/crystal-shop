@@ -59,6 +59,63 @@
                 Ours begins in the Himalayas, where nature's purest gems meet the hands of skilled artisans to create
                 jewelry that connects with your soul. </p>
         </div>
+        <section class="grid col-span-2 mt-8 gap-7">
+            <div class="col-start-1 ml-[100px]  ">
+                <div>
+                    <img src="{{ asset('storage/images/ourjourney1.jpeg') }}" alt=""
+                        class="w-[360px] h-[360px] rounded-lg">
+                </div>
+                <div>
+                    <h2>Handcrafting</h2>
+                    <p>
+                        Every piece is meticulously shaped and polished by our skilled artisans, who breathe life into
+                        raw
+                        crystals through traditional techniques.
+                    </p>
+                </div>
+
+                <div>
+                    <img src="{{ asset('storage/images/ourjourney3.jpg') }}" alt=""
+                        class="w-[360px] h-[360px] rounded-lg">
+                </div>
+
+                <div>
+                    <h2>You</h2>
+                    <p>
+                        The final and most important part of our journey—when our crystals find their way to you,
+                        bringing their healing energies into your life.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-start-2">
+                <div>
+                    <h1>Sourcing</h1>
+                    <p>
+                        Our journey begins with the ethical sourcing of raw crystals from the pristine mountains of
+                        Nepal, working directly with local communities.</p>
+                </div>
+
+                <div>
+                    <img src="{{ asset('storage/images/ourjourney2.jpeg') }}" alt=""
+                        class="w-[360px] h-[360px] rounded-lg">
+                </div>
+
+                <div>
+                    <h2>EnergyCleansing</h2>
+                    <p>
+                        Each crystal undergoes a sacred cleansing ritual to enhance its natural energies before it
+                        begins its journey to you.
+                    </p>
+                </div>
+
+                <div>
+                    <img src="{{ asset('storage/images/ourjourney4.jpg') }}" alt=""
+                        class="w-[360px] h-[360px] rounded-lg object-cover">
+                </div>
+            </div>
+        </section>
 
         {{-- end of first div --}}
     </div>
