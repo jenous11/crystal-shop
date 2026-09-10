@@ -117,6 +117,87 @@
             </div>
         </section>
 
+        {{-- Our Values --}}
+
+        <header class="flex justify-center bg-blue-400 text-4xl mt-3">Our Values</header>
+        <div class="flex bg-purple-600  justify-center">
+            <p class="text-center text-wrap  w-1/3 ">
+                Every decision we make is guided by our core values. These principles define who we are and how we
+                create. </p>
+        </div>
+        <section>
+            {{-- authenticity --}}
+            <div>
+                <img src="" alt="">
+                <h1></h1>
+                <p></p>
+            </div>
+            {{-- handmade with love --}}
+            <div>
+                <img src="" alt="">
+                <h1></h1>
+                <p></p>
+            </div>
+            {{-- Ethically Sourced --}}
+
+            <div>
+                <img src="" alt="">
+                <h1></h1>
+                <p></p>
+            </div>
+
+            {{-- spiritual connection --}}
+
+            <div>
+                <img src="" alt="">
+                <h1></h1>
+                <p></p>
+            </div>
+        </section>
+
+        {{-- Meet our fonders --}}
+        <header class="flex justify-center bg-blue-400 text-4xl mt-3">Meet Our Founders</header>
+        <div class="flex bg-purple-600  justify-center">
+            <p class="text-center text-wrap  w-1/3 ">
+                The passionate souls behind Himalayan Crystal House who turned their love for crystals into a mission.
+            </p>
+        </div>
+
+        <section>
+            <div>
+                {{-- maya sharma --}}
+                <div>
+                    <img src="{{asset('storage/images/mayasharma.png')}}" alt="">
+                    <h1></h1>
+                    <h1></h1>
+                    <p></p>
+                </div>
+
+                {{-- raj gurung --}}
+                <div>
+                    <img src="" alt="">
+                    <h1></h1>
+                    <h1></h1>
+                    <p></p>
+                </div>
+
+            </div>
+        </section>
+
+        {{-- Our Values --}}
+
+        <header class="flex justify-center bg-blue-400 text-4xl mt-3">Join Us On This Journey</header>
+        <div class="flex bg-purple-600  justify-center">
+            <p class="text-center text-wrap  w-1/3 ">
+                Let's find the perfect crystal that resonates with your energy and intention. Explore our collection or
+                connect with us for a personalized consultation.
+            </p>
+            <div>
+                <button>shop our collections</button>
+                <button>Book a tarot reading</button>
+            </div>
+        </div>
+
         {{-- end of first div --}}
     </div>
 </x-app-layout>
