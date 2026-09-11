@@ -47,7 +47,7 @@ class CartController extends Controller
   {
     if (Auth::check()) {
       // $user_id=Auth::id();
-      $cartItems = CartItems::with('user', 'product')->get();
+      $cartItems = CartItems::with('user', 'product')->where('user_id',Auth::id())->get();
       // dd($cartItems);
       return view('cart.index', compact('cartItems'));
     }
