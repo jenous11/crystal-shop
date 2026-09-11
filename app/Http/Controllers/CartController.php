@@ -33,10 +33,10 @@ class CartController extends Controller
 
     if ($cartItemOne->wasRecentlyCreated) {
       // do nothing, DB default already made it 1
-      } else {
-        $cartItemOne->increment('quantity');
-        }
-        $cartItemTwo = CartItems::where('user_id', $user_id)->sum('quantity');
+    } else {
+      $cartItemOne->increment('quantity');
+    }
+    $cartItemTwo = CartItems::where('user_id', $user_id)->sum('quantity');
     return response()->json(['cartCount' => $cartItemTwo]);
   }
 
@@ -50,14 +50,13 @@ class CartController extends Controller
       $cartItems = CartItems::with('user', 'product')->get();
       // dd($cartItems);
       return view('cart.index', compact('cartItems'));
-    
     }
   }
 
   public function delete(CartItems $cartItem)
   {
 
-    $this->authorize('delete',$cartItem);
+    $this->authorize('delete', $cartItem);
     $cartItem->delete();
     return redirect()->route('cart.index');
   }
