@@ -35,5 +35,14 @@ User::firstOrCreate(
       'is_featured' => true,
       'is_stock' => true,
     ]);
+    Product::factory()->create([
+      'name' => 'Howlite flat bracelet',
+      'description' => 'Energy Grounding',
+      'price' => 1500,
+      'image' => 'images/01KZ0MMT5E7C9E6HFJHJT1PMJH.jpg',
+      'category_id' => $category->id,
+      'is_featured' => true,
+      'is_stock' => true,
+    ]);
   }
 }
