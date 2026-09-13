@@ -1,15 +1,28 @@
+<div class="m-4">
 
-<div class="m-4 " >
-    <!-- Well begun is half done. - Aristotle -->
-    <form action="{{route('products.productfilter')}}" method="post" class="rounded-lg">
-      @csrf
-      <select name="filteroptions" id="" placeholder="select filter" class="rounded-lg">
+    <form
+        action="{{ route('products.productfilter') }}"
+        method="post"
+        class="flex items-center gap-2"
+    >
+        @csrf
 
-        {{-- preselected option --}}
-        <option value="" selected>--filter--</option>
-        <option name="is_featured" value="is_featured" >featured products</option>
-        <option  name="is_stock" value="is_stock">in stock products</option>
-      </select>
-      <button type="submit">submit</button>
+        <select
+            name="filteroptions"
+            class="rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none focus:border-[#3a5a32]"
+        >
+            <option value="" selected>-- Filter --</option>
+            <option value="is_featured">Featured Products</option>
+            <option value="is_stock">In Stock Products</option>
+        </select>
+
+        <button
+            type="submit"
+            class="rounded-md bg-[#3a5a32] px-4 py-2 text-white hover:opacity-90"
+        >
+            Filter
+        </button>
+
     </form>
+
 </div>
