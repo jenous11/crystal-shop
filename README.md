@@ -23,6 +23,9 @@ Want to try the app without registering?
 ## 💳 Testing Payments (eSewa Sandbox)
 Checkout uses eSewa's official test environment — no real money is involved.
 - eSewa ID: `9806800001` (also valid: `9806800002` through `9806800005`)
+- or `971111111111`,
+- password 'Test@123
+- otp token - `123456`
 - Password: `Nepal123`
 - MPIN: `1122`
 
