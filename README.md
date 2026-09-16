@@ -10,6 +10,8 @@ A Laravel e-commerce app for browsing and purchasing crystal jewelry and bracele
 ![productspage](public/images/imagestoshow/productspage.png)
 ## Single Products Page
 ![singleproductspage](public/images/imagestoshow/singleproductpage.png)
+## Esewa Payment
+![esewapayment](public/images/imagestoshow/esewapayment.png)
 ## Options to choose from
 ![mightalsolikeimages](public/images/imagestoshow/mightalsolike.png)
 ## Admin Panel
