@@ -174,7 +174,7 @@
                 <div class="flex justify-center md:justify-end">
                     <div class="overflow-hidden rounded-[8px] bg-white shadow-[rgba(0,0,0,0.1)_0px_2px_4px_0px]">
                         <img
-                            src="{{ asset('storage/images/ourjourney2.jpeg') }}"
+                            src="{{ asset('images/ourjourney2.jpeg') }}"
                             alt="Crystal sourcing in Nepal"
                             class="h-[280px] w-[280px] object-cover transition duration-500 hover:scale-[1.03] md:h-[300px] md:w-[300px]"
                         >
@@ -235,7 +235,7 @@
                 <div class="order-1 flex justify-center md:order-2 md:justify-start">
                     <div class="overflow-hidden rounded-[8px] bg-white shadow-[rgba(0,0,0,0.1)_0px_2px_4px_0px]">
                         <img
-                            src="{{ asset('storage/images/ourjourney1.jpeg') }}"
+                            src="{{ asset('images/ourjourney1.jpeg') }}"
                             alt="Handcrafting crystal jewelry"
                             class="h-[280px] w-[280px] object-cover transition duration-500 hover:scale-[1.03] md:h-[300px] md:w-[300px]"
                         >
@@ -257,7 +257,7 @@
                 <div class="flex justify-center md:justify-end">
                     <div class="overflow-hidden rounded-[8px] bg-white shadow-[rgba(0,0,0,0.1)_0px_2px_4px_0px]">
                         <img
-                            src="{{ asset('storage/images/ourjourney4.jpg') }}"
+                            src="{{ asset('images/ourjourney4.jpg') }}"
                             alt="Crystal energy cleansing"
                             class="h-[280px] w-[280px] object-cover transition duration-500 hover:scale-[1.03] md:h-[300px] md:w-[300px]"
                         >
@@ -319,7 +319,7 @@
                 <div class="order-1 flex justify-center md:order-2 md:justify-start">
                     <div class="overflow-hidden rounded-[8px] bg-white shadow-[rgba(0,0,0,0.1)_0px_2px_4px_0px]">
                         <img
-                            src="{{ asset('storage/images/ourjourney3.jpg') }}"
+                            src="{{ asset('images/ourjourney3.jpg') }}"
                             alt="Crystal jewelry finding its home"
                             class="h-[280px] w-[280px] object-cover transition duration-500 hover:scale-[1.03] md:h-[300px] md:w-[300px]"
                         >
@@ -369,7 +369,7 @@
 
                     <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#dce4d9]">
                         <img
-                            src="{{ asset('storage/images/authenticity.svg') }}"
+                            src="{{ asset('images/authenticity.svg') }}"
                             alt="Authenticity"
                             class="h-10 w-10"
                         >
@@ -392,7 +392,7 @@
 
                     <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#dce4d9]">
                         <img
-                            src="{{ asset('storage/images/handmadewithlove.svg') }}"
+                            src="{{ asset('images/handmadewithlove.svg') }}"
                             alt="Handmade with Love"
                             class="h-10 w-10"
                         >
@@ -415,7 +415,7 @@
 
                     <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#dce4d9]">
                         <img
-                            src="{{ asset('storage/images/ethicallysourced.svg') }}"
+                            src="{{ asset('images/ethicallysourced.svg') }}"
                             alt="Ethically Sourced"
                             class="h-10 w-10"
                         >
@@ -438,7 +438,7 @@
 
                     <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#dce4d9]">
                         <img
-                            src="{{ asset('storage/images/spiritualconnection.svg') }}"
+                            src="{{ asset('images/spiritualconnection.svg') }}"
                             alt="Spiritual Connection"
                             class="h-10 w-10"
                         >
@@ -492,7 +492,7 @@
 
                     <div class="overflow-hidden rounded-[16px] bg-[#f4f5f0]">
                         <img
-                            src="{{ asset('storage/images/mayasharma.png') }}"
+                            src="{{ asset('images/mayasharma.png') }}"
                             alt="Maya Sharma"
                             class="h-[420px] w-full object-cover"
                         >
@@ -539,7 +539,7 @@
 
                     <div class="order-1 overflow-hidden rounded-[16px] bg-[#f4f5f0] md:order-2">
                         <img
-                            src="{{ asset('storage/images/mayasharma2.png') }}"
+                            src="{{ asset('images/mayasharma2.png') }}"
                             alt="Raj Gurung"
                             class="h-[420px] w-full object-cover"
                         >
