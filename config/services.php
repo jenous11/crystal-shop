@@ -40,7 +40,9 @@ return [
       'esewa_secret_key'=>env('ESEWA_SECRET_KEY'),
       'esewa_base_url'=>env('ESEWA_BASE_URL'),
       'esewa_status_url'=>env('ESEWA_STATUS_URL')
-    ]
-
+    ],
+ 'weather'=>[
+  'openweather_api_key'=>env('OPEN_WEATHER_API_KEY')
+ ]
 
 ];

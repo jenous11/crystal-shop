@@ -30,7 +30,7 @@
                     </p>
 
                     <a
-                        href="{{ route('public.products.index') }}"
+                        href="{{ route('products.index') }}"
                         class="mt-8 inline-flex items-center rounded-[5px] border border-[#3a5a32] bg-[#3a5a32] px-6 py-3 text-[16px] text-white transition duration-300 hover:bg-[#323c34]"
                     >
                         Explore Our Collection
@@ -608,7 +608,7 @@
                 <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
 
                     <a
-                        href="{{ route('public.products.index') }}"
+                        href="{{ route('products.index') }}"
                         class="inline-flex items-center justify-center rounded-[5px] bg-white px-6 py-3 text-[16px] text-[#3a5a32] transition duration-300 hover:bg-[#f4f5f0]"
                     >
                         Shop Our Collection
