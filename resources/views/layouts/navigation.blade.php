@@ -5,7 +5,7 @@
 
         {{-- Logo --}}
         <div class="w-[85px] md:w-[95px]">
-            <a href="{{ route('products.index') }}">
+            <a href="{{ route('home') }}">
                 <img
                     src="{{ asset('storage/images/himalayan_crystal_house_logo.png') }}"
                     alt="Himalayan Crystal House"

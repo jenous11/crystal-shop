@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Services\MoodWidgetService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,11 +13,20 @@ class ProductController extends Controller
   /**
    * Display a listing of the resource.
    */
+  // protected $service;
+  protected MoodWidgetService $service;
+  public function __construct(MoodWidgetService $service)
+  {
+    $this->service = $service;
+  }
+
   public function home()
   {
+    $weather = $this->service->getWeatherData();
+
     $products = Product::latest()->take(4)->get();
 
-    return view('welcome', compact('products'));
+    return view('welcome', compact('products', 'weather'));
   }
 
   public function index()

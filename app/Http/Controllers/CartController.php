@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-  //
   public function store(Product $product)
   {
 
@@ -40,14 +39,11 @@ class CartController extends Controller
     return response()->json(['cartCount' => $cartItemTwo]);
   }
 
-
-
-
   public function index(Product $product)
   {
     if (Auth::check()) {
       // $user_id=Auth::id();
-      $cartItems = CartItems::with('user', 'product')->where('user_id',Auth::id())->get();
+      $cartItems = CartItems::with('user', 'product')->where('user_id', Auth::id())->get();
       // dd($cartItems);
       return view('cart.index', compact('cartItems'));
     }
@@ -55,7 +51,6 @@ class CartController extends Controller
 
   public function delete(CartItems $cartItem)
   {
-
     $this->authorize('delete', $cartItem);
     $cartItem->delete();
     return redirect()->route('cart.index');

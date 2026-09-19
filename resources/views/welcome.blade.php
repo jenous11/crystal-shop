@@ -1,4 +1,10 @@
 <x-app-layout>
+{{-- @inject('service', 'App\Services\MoodWidgetService') --}}
+
+{{$weather['temp']}}
+{{$weather['condition']}}
+
+
 
     {{-- Hero --}}
     <section class="bg-[#f4f5f0] px-5 py-16 md:py-24">
