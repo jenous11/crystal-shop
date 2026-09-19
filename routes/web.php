@@ -7,7 +7,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [ProductController::class, 'index'])->name('public.products.index');
+// Route::get('/', [ProductController::class, 'index'])->name('public.products.index');
+Route::get('/', [ProductController::class, 'home'])->name('home');;
+// Route::get('/about', [ProductController::class, 'about'])->name('about');
+
 
 Route::get('/dashboard', [ProductController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 
