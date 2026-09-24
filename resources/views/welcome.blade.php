@@ -1,8 +1,12 @@
 <x-app-layout>
 {{-- @inject('service', 'App\Services\MoodWidgetService') --}}
 
-{{$weather['temp']}}
-{{$weather['condition']}}
+temp:{{$weather['temp']}}C
+<br>
+Weather:{{$weather['condition']}}
+<br>
+Mood:{{$mood}}
+<br>
 
 
 

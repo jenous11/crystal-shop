@@ -24,4 +24,12 @@ class MoodWidgetService
     $datatemp = $data['main']['temp'];
     return ['condition'=>$dataWeather,'temp'=>$datatemp];
   }
+
+  // public function getQuoteData(){
+  //   $quoteData=Http::get('https://zenquotes.io/api/random');
+  //   $quote=$quoteData->json();
+  //   $quoteArray=$quote[0]['q'];
+  //   $quoteArrayAuthor=$quote[0]['a'];
+  //   return ['quote'=>$quoteArray,'author'=>$quoteArrayAuthor];
+  // }
 }

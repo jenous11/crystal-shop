@@ -23,10 +23,30 @@ class ProductController extends Controller
   public function home()
   {
     $weather = $this->service->getWeatherData();
+    // dd($weather['condition']);
+
+    if ($weather['condition'] == 'Rain'){
+        $mood= "Rainy and gloomy — grab a healing crystal to lift the mood";
+    }
+    else if ($weather['condition'] == "Clear"){
+      $mood="Sunny skies, sharp energy — perfect day for a citrine boost";
+    }
+    else if ($weather['condition'] == "Clouds"){
+      $mood= "Cloudy calm — ideal for deep focus, try amethyst";
+    }
+    else if ($weather['condition'] == "Thunderstorm"){
+      $mood= "Stormy out there — protection stones got your back";
+    }
+    else{
+      $mood= "Shop our collections";
+    }
+
+
+
 
     $products = Product::latest()->take(4)->get();
 
-    return view('welcome', compact('products', 'weather'));
+    return view('welcome', compact('products', 'weather','mood'));
   }
 
   public function index()
