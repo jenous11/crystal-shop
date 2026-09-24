@@ -1,13 +1,13 @@
 <x-app-layout>
 
-    <div class="mt-8 grid grid-cols-1 gap-8 px-5 md:mt-12 md:grid-cols-2 md:gap-10 md:px-0">
+<div class="mt-8 grid grid-cols-1 gap-8 px-5 md:mt-12 md:grid-cols-2 md:gap-20 md:px-0">
 
         {{-- product image --}}
-        <div class="w-full md:ml-10">
+        <div class="w-full md:ml-10 ">
             <img
                 src="{{ asset('storage/' . $product->image) }}"
                 alt="{{ $product->name }}"
-                class="h-auto max-h-[540px] w-full object-cover md:h-[540px] md:w-[750px]"
+                class="h-auto max-h-[540px] w-full object-cover md:h-[540px] md:w-[750px] rounded-md"
             >
         </div>
 
